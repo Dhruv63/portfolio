@@ -8,11 +8,12 @@ export default {
     extend: {
       colors: {
         obsidian: {
-          DEFAULT: '#08090C',
-          dark: '#040507',
-          surface: '#0E1015',
-          elevated: '#13151D',
-          hover: '#191C27',
+          DEFAULT: '#060709',
+          dark: '#030304',
+          surface: '#0B0D12',
+          elevated: '#11141C',
+          card: '#161924',
+          hover: '#1D2130',
         },
         champagne: {
           DEFAULT: '#C5A880',
@@ -22,22 +23,29 @@ export default {
           muted: 'rgba(197, 168, 128, 0.35)',
           hairline: 'rgba(197, 168, 128, 0.18)',
         },
+        inferno: {
+          DEFAULT: '#E05A36',
+          glow: 'rgba(224, 90, 54, 0.4)',
+          dim: '#85321B',
+        },
         mineral: {
           light: '#D1D4DC',
-          DEFAULT: '#8E919D',
-          muted: '#5C5F6D',
-          dark: '#3A3C45',
+          DEFAULT: '#9C9C9C',
+          muted: '#636775',
+          dark: '#2A2C35',
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        display: ['"Cinzel"', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        monumental: ['"Bodoni Moda"', 'serif'],
+        display: ['"Clash Grotesk"', 'sans-serif'],
+        serif: ['"Bodoni Moda"', 'serif'],
+        sans: ['"Clash Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       letterSpacing: {
         widest: '0.25em',
         monumental: '0.35em',
+        epic: '0.5em',
       }
     },
   },
