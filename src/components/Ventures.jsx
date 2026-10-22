@@ -22,7 +22,7 @@ export default function Ventures() {
         
         {/* Act II Title Block (No eyebrow above heading) */}
         <div data-reveal className="text-center space-y-4">
-          <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight uppercase">
+          <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
             THE PRODUCTIONS.
           </h2>
           <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto">

@@ -36,7 +36,8 @@ export default {
         }
       },
       fontFamily: {
-        monumental: ['"Bodoni Moda"', 'serif'],
+        monumental: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
+        parkinson: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
         display: ['"Clash Grotesk"', 'sans-serif'],
         serif: ['"Bodoni Moda"', 'serif'],
         sans: ['"Clash Grotesk"', 'system-ui', 'sans-serif'],

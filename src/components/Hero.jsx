@@ -35,10 +35,10 @@ export default function Hero() {
         
         {/* Monumental Headline (No eyebrow above it) */}
         <div className="space-y-4">
-          <h1 className="font-monumental text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-tight uppercase leading-[0.92]">
+          <h1 className="font-monumental text-5xl sm:text-8xl md:text-9xl font-normal text-white tracking-tight uppercase leading-[0.92]">
             DHRUV SOLANKI
           </h1>
-          <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-mineral-light font-light max-w-3xl mx-auto leading-tight">
+          <p className="font-serif italic text-xl sm:text-3xl md:text-4xl text-mineral-light font-light max-w-3xl mx-auto leading-tight">
             Software architect &amp; founder operating from first principles.
           </p>
         </div>

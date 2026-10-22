@@ -10,7 +10,9 @@ build/
 # Agent tools & workspace skills
 .agents/
 .taste-skill/
+.impeccable/
 skills-lock.json
+public/font-test.html
 
 # Local environment & caches
 .env

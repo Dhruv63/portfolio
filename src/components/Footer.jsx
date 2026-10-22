@@ -19,7 +19,7 @@ export default function Footer() {
         
         {/* Act V Title Block (No eyebrow above heading) */}
         <div data-reveal className="text-center space-y-4">
-          <h2 className="font-monumental text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight uppercase">
+          <h2 className="font-monumental text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-tight uppercase">
             TRANSMISSION.
           </h2>
           <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto">
