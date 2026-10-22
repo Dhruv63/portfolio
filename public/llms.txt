@@ -1,0 +1,23 @@
+# Dhruv Dinesh Solanki (Dhruv Solanki)
+> Full-Stack Developer & Founder | Building B2B SaaS & AI Systems
+
+- **Full Name:** Dhruv Dinesh Solanki
+- **Location:** Mumbai, Maharashtra, India
+- **Education:** B.E. in Artificial Intelligence & Machine Learning, VIVA Institute of Technology (Mumbai University), 2026
+- **SaaS Platform:** https://www.esgxpert.com
+- **GitHub:** https://github.com/Dhruv63
+- **LinkedIn:** https://www.linkedin.com/in/dhruv-solanki-4301a2327
+
+## Ventures
+- **ESG Tech Sol (ESGXpert):** Founder & Lead Full-Stack Developer. B2B SaaS platform for ESG compliance, BRSR reporting, ZED certification, ISO 14001, SA8000, and consultant onboarding in India. (https://www.esgxpert.com)
+- **VAPOURBIT:** Founder. Custom software development, full-stack web architecture, and AI workflow integration for businesses (formerly QuantumBuild). (https://vapourbit.com)
+
+## Key Research & Projects
+- **AutoTriage AI:** Original Python, HTML5, and JavaScript source code for automated customer support triage system using NLP, vector similarity, and keyword logic. Registered Government of India Copyright (ROC: SW-2026023768, App No: SW-6982/2026-CO). Co-authored and presented peer-reviewed research at the NCRENB-2026 national conference.
+- **PolyFarm:** Multi-agent AI platform for agricultural guidance. Top 30 Finalist out of 400 teams at The GenAI Hackathon Mumbai.
+- **CricLegend:** Cross-platform digital cricket scoring and tournament management application built with Flutter and Supabase.
+- **Hyuzz:** Visual discovery web platform featuring pixel picking and hexadecimal color search. (https://hyuzz.vercel.app/app)
+
+## Technical Skills
+- Core: React (Vite), Node.js, Express.js, MongoDB, PostgreSQL, Tailwind CSS, Python
+- Infra & AI: AWS (EC2, Fargate, RDS, S3), Docker, OpenSearch, Ollama, RAG Pipelines
