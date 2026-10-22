@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import { soundEngine } from '../utils/audio';
 
 export default function Navbar() {
@@ -7,6 +7,7 @@ export default function Navbar() {
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [activeSection, setActiveSection] = useState('prologue');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -80,11 +81,13 @@ export default function Navbar() {
         if (targetEl) {
           targetEl.scrollIntoView({ behavior: 'smooth' });
           soundEngine.playClick(600);
+          setMobileMenuOpen(false);
         }
       } else if (e.key === 't' || e.key === 'T') {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         soundEngine.playClick(700);
+        setMobileMenuOpen(false);
       }
     };
 
@@ -105,25 +108,27 @@ export default function Navbar() {
     { id: 'contact', href: '#contact', label: 'V. Transmit' },
   ];
 
+  const currentActiveLink = navLinks.find((l) => l.id === activeSection) || navLinks[0];
+
   return (
-    <header className="sticky top-0 z-40 bg-obsidian-dark/95 backdrop-blur-md border-none">
+    <header className="sticky top-0 z-40 bg-obsidian-dark/95 backdrop-blur-md border-b border-white/[0.04]">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Left: Brand Monogram */}
         <a 
           href="#prologue"
           onClick={() => soundEngine.playClick(600)}
-          className="group flex items-center gap-3"
+          className="group flex items-center gap-3 shrink-0"
         >
           <span className="font-monumental text-lg sm:text-xl font-bold text-white group-hover:text-champagne transition-colors">
             DHRUV SOLANKI
           </span>
-          <span className="hidden xl:inline-block text-xs text-mineral-muted px-2.5 py-0.5 bg-white/[0.04] rounded tracking-wide">
-            Software Architect
+          <span className="hidden xl:inline-block text-xs text-mineral-muted px-2.5 py-0.5 bg-white/[0.04] rounded tracking-wide font-mono">
+            ARCHITECT
           </span>
         </a>
 
-        {/* Center: Chapter Navigation Links with Scroll-Spy & Active States */}
+        {/* Center: Desktop Chapter Links with Scroll-Spy & Active States */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-sans" aria-label="Main Navigation">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -147,8 +152,22 @@ export default function Navbar() {
           })}
         </nav>
 
+        {/* Mobile Chapter HUD Pill (Visible only on < md screens) */}
+        <button
+          onClick={() => {
+            soundEngine.playClick(450);
+            setMobileMenuOpen(!mobileMenuOpen);
+          }}
+          className="md:hidden flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-white"
+          aria-label="Toggle mobile chapters menu"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-inferno animate-pulse" />
+          <span className="truncate max-w-[100px]">{currentActiveLink.label}</span>
+          <ChevronDown className={`w-3 h-3 text-mineral transition-transform ${mobileMenuOpen ? 'rotate-180' : ''}`} />
+        </button>
+
         {/* Right: Sound Toggle, Keyboard Hints & Live Telemetry */}
-        <div className="flex items-center gap-3 text-sm font-sans text-mineral">
+        <div className="flex items-center gap-2 sm:gap-3 text-sm font-sans text-mineral shrink-0">
           
           <button
             onClick={handleSoundToggle}
@@ -182,16 +201,48 @@ export default function Navbar() {
             </kbd>
           </button>
 
-          <div className="flex items-center gap-2 bg-obsidian-surface px-3 py-1.5 rounded-full border border-white/[0.04]">
-            <span className="inline-flex rounded-full h-2 w-2 bg-emerald-500 animate-pulse" />
-            <span className="text-xs text-mineral-light tracking-tight">
-              Mumbai {time || '16:00:00'} IST
+          <div className="flex items-center gap-2 bg-obsidian-surface px-2.5 sm:px-3 py-1.5 rounded-full border border-white/[0.04]">
+            <span className="inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500 animate-pulse" />
+            <span className="text-[11px] sm:text-xs text-mineral-light tracking-tight font-mono">
+              <span className="hidden sm:inline">Mumbai </span>{time || '18:00:00'} IST
             </span>
           </div>
 
         </div>
 
       </div>
+
+      {/* Mobile Chapter Drawer / Popdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-obsidian-elevated/98 backdrop-blur-xl border-b border-white/[0.08] px-6 py-4 space-y-2">
+          <div className="font-mono text-[10px] uppercase text-mineral-muted tracking-wider pb-1">
+            JUMP TO CHAPTER
+          </div>
+          <div className="grid grid-cols-1 gap-1">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={() => {
+                    soundEngine.playClick(500);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
+                    isActive 
+                      ? 'bg-white/[0.08] text-white font-medium' 
+                      : 'text-mineral-light hover:bg-white/[0.03] hover:text-white'
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  {isActive && <span className="text-xs font-mono text-inferno">ACTIVE</span>}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Chapter Reading Progress Bar */}
       <div className="absolute bottom-0 left-0 h-[2px] bg-white/[0.04] w-full overflow-hidden" aria-hidden="true">

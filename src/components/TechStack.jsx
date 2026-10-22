@@ -4,147 +4,244 @@ import { soundEngine } from '../utils/audio';
 export default function TechStack() {
   const pillars = [
     {
-      title: "Core Languages",
-      desc: "Typed, deterministic enterprise runtimes and systems programming.",
-      skills: ["TypeScript", "JavaScript (ESNext)", "Python 3.11+", "SQL & PostgreSQL Dialect", "HTML5 Canvas"],
+      index: "01",
+      category: "CORE RUNTIMES",
+      title: "Systems & Languages",
+      desc: "Typed, deterministic enterprise execution environments and systems programming.",
+      technologies: [
+        { name: "TypeScript 5.x", role: "Strictly typed enterprise contracts" },
+        { name: "JavaScript (ESNext)", role: "Modern async event-loop runtime" },
+        { name: "Python 3.11+", role: "High-performance scientific & AI backends" },
+        { name: "SQL & PostgreSQL Dialect", role: "Deterministic relational queries" },
+        { name: "HTML5 Canvas API", role: "Low-overhead visual & physics rendering" },
+      ],
     },
     {
+      index: "02",
+      category: "DISTRIBUTED CLOUD",
       title: "Cloud Infrastructure",
       desc: "Low-latency microservices, async worker queues, and containerized deployments.",
-      skills: ["Node.js (LTS)", "FastAPI", "Express", "Docker Containers", "AWS (EC2, S3, IAM)", "Linux / Ubuntu"],
+      technologies: [
+        { name: "Node.js (LTS)", role: "Event-driven asynchronous I/O" },
+        { name: "FastAPI & Express", role: "High-throughput RESTful gateways" },
+        { name: "Docker Containers", role: "Immutable production environments" },
+        { name: "AWS Cloud Infrastructure", role: "EC2 compute, S3 assets, IAM policies" },
+        { name: "Linux / Ubuntu Server", role: "Hardened kernel configuration & tuning" },
+      ],
     },
     {
+      index: "03",
+      category: "STORAGE ARCHITECTURE",
       title: "Data Storage & Caching",
       desc: "Relational statutory ledgers and distributed in-memory cache architectures.",
-      skills: ["PostgreSQL (ACID Compliant)", "Supabase", "Redis (Cache & PubSub)", "MongoDB", "OpenSearch"],
+      technologies: [
+        { name: "PostgreSQL (ACID)", role: "Statutory compliance ledgers & schemas" },
+        { name: "Supabase Architecture", role: "Real-time subscriptions & row-level security" },
+        { name: "Redis In-Memory Engine", role: "Sub-millisecond caching & Pub/Sub" },
+        { name: "MongoDB Cluster", role: "Unstructured document storage" },
+        { name: "OpenSearch Indexing", role: "Distributed full-text retrieval" },
+      ],
     },
     {
+      index: "04",
+      category: "APPLIED INTELLIGENCE",
       title: "Applied AI & Interfaces",
       desc: "Semantic vector retrieval, intent classification engines, and reactive web UI.",
-      skills: ["React 18+", "Next.js (App Router)", "RAG-lite Embeddings", "Vector Similarity (Cosine)", "Tailwind CSS"],
+      technologies: [
+        { name: "React 18 & Next.js", role: "Predictable, componentized reactive interfaces" },
+        { name: "RAG-lite Embeddings", role: "Lightweight semantic retrieval pipelines" },
+        { name: "Vector Cosine Similarity", role: "Deterministic incident classification" },
+        { name: "Tailwind CSS Engine", role: "Restrained, tokenized visual hierarchy" },
+        { name: "Web Audio Synthesizer", role: "Procedural soundscape generation" },
+      ],
     },
   ];
 
   const systems = [
     {
-      name: "Statutory Data Engine",
-      purpose: "SEBI BRSR Core compliance ledger with automated carbon factor calculation.",
-      latency: "< 45ms audit export",
-      spec: "100% deterministic mathematical model verified against CEA standards.",
+      code: "SEBI-BRSR-01",
+      name: "Statutory Compliance Engine",
+      purpose: "SEBI BRSR Core corporate carbon calculation ledger with automated factor estimation.",
+      latency: "< 45ms",
+      latencyLabel: "p95 export",
+      spec: "Deterministic mathematical model strictly calibrated against CEA emission factors.",
     },
     {
-      name: "Microservice Cloud Studio",
-      purpose: "High-throughput asynchronous API gateway and distributed worker pool.",
-      latency: "< 18ms p99 SLA",
-      spec: "Docker containerized, auto-scaling AWS infrastructure with Redis cache.",
+      code: "GATEWAY-02",
+      name: "Cloud Microservice Architecture",
+      purpose: "High-throughput asynchronous API gateway and distributed worker queue pool.",
+      latency: "< 18ms",
+      latencyLabel: "p99 SLA",
+      spec: "Containerized, auto-scaling AWS infrastructure with Redis distributed caching.",
     },
     {
+      code: "ROC-SW-03",
       name: "Autonomous Triage Core",
-      purpose: "Govt. registered incident triage engine combining RAG-lite vector search and heuristics.",
-      latency: "< 12ms inference",
-      spec: "Statutory computer science copyright ROC SW-2026023768.",
+      purpose: "Government of India registered triage engine combining RAG-lite vector similarity with heuristics.",
+      latency: "< 12ms",
+      latencyLabel: "inference",
+      spec: "Statutory computer science copyright registration ROC SW-2026023768.",
     },
   ];
 
   return (
-    <section id="stack" className="relative py-16 sm:py-20 px-6 bg-[#0D1017]">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section id="stack" className="relative py-20 px-6 bg-obsidian-dark border-t border-white/[0.04]">
+      <div className="max-w-6xl mx-auto space-y-20">
         
-        {/* Act IV Title Block (No eyebrow above heading) */}
+        {/* Act IV Header */}
         <div data-reveal className="text-center space-y-4">
           <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
             THE ARSENAL.
           </h2>
-          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto">
+          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto leading-relaxed">
             Production-proven technologies, cloud infrastructure, and computational engines.
           </p>
         </div>
 
-        {/* Narrative Split: Architectural Manifesto + Pillars */}
-        <div data-reveal className="grid grid-cols-1 lg:grid-cols-12 gap-10 p-8 sm:p-12 rounded-2xl bg-obsidian-elevated">
-          
-          {/* Left Column: Architectural Manifesto */}
-          <div className="lg:col-span-5 space-y-6">
+        {/* Narrative Intro & Principles */}
+        <div data-reveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-5 space-y-4">
+            <span className="font-mono text-xs uppercase tracking-widest text-champagne">
+              // ARCHITECTURAL PHILOSOPHY
+            </span>
             <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
               Deterministic Foundations
             </h3>
-            
-            <p className="text-base sm:text-lg text-mineral-light font-sans leading-relaxed">
-              Every layer from statutory SEBI BRSR calculations to microservice gRPC endpoints is built with immutable schema contracts, end-to-end type safety, and zero-compromise audit trails.
+            <p className="text-base text-mineral-light font-sans leading-relaxed">
+              Every layer from statutory SEBI BRSR compliance to distributed microservice endpoints is engineered with immutable schema contracts, end-to-end type safety, and zero-compromise audit trails.
             </p>
-
-            <div className="p-6 rounded-xl bg-obsidian-surface space-y-3">
-              <span className="font-monumental text-xl font-bold text-champagne block">
-                Engineering Guarantees
-              </span>
-              <ul className="space-y-2 text-sm sm:text-base text-mineral-light font-sans">
-                <li>• Strict schema validation on all inputs</li>
-                <li>• Sub-20ms median latency bounds across cloud APIs</li>
-                <li>• 100% audit-proof regulatory reproducibility</li>
-                <li>• Zero-dependency resilient algorithms for critical paths</li>
-              </ul>
-            </div>
           </div>
 
-          {/* Right Column: Large Typographic Editorial List */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
+              <span className="font-mono text-xs text-champagne block">01 / IMMUTABILITY</span>
+              <h4 className="font-sans font-semibold text-white text-sm">Strict Schemas</h4>
+              <p className="text-xs text-mineral font-sans leading-relaxed">
+                Guaranteed schema validation on all inputs and API payloads.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
+              <span className="font-mono text-xs text-champagne block">02 / LATENCY</span>
+              <h4 className="font-sans font-semibold text-white text-sm">Bounded SLAs</h4>
+              <p className="text-xs text-mineral font-sans leading-relaxed">
+                Sub-20ms median latency bounds across cloud network calls.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
+              <span className="font-mono text-xs text-champagne block">03 / AUDITABILITY</span>
+              <h4 className="font-sans font-semibold text-white text-sm">Regulatory Proof</h4>
+              <p className="text-xs text-mineral font-sans leading-relaxed">
+                100% reproducible audit trails for compliance authorities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Systems Capability Matrix (Zero Pill Tags — Clean Typographic Ledger) */}
+        <div data-reveal className="space-y-6">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
+            <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted">
+              SYSTEMS CAPABILITY MATRIX // 04 PILLARS
+            </span>
+            <span className="font-mono text-xs text-mineral-muted hidden sm:inline">
+              STANDARDS: PRODUCTION DEPLOYED
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {pillars.map((pillar) => (
-              <div 
-                key={pillar.title} 
+              <div
+                key={pillar.category}
                 onMouseEnter={() => soundEngine.playClick(320)}
-                className="space-y-3"
+                className="p-8 rounded-2xl bg-obsidian-surface border border-white/[0.04] hover:border-white/[0.12] transition-colors flex flex-col justify-between space-y-6"
               >
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs tracking-widest text-inferno font-medium">
+                      [{pillar.index}] {pillar.category}
+                    </span>
+                  </div>
+
                   <h4 className="font-monumental text-2xl text-white font-bold tracking-tight">
                     {pillar.title}
                   </h4>
-                  <span className="text-sm text-mineral font-sans">{pillar.desc}</span>
+
+                  <p className="text-sm text-mineral font-sans leading-relaxed">
+                    {pillar.desc}
+                  </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {pillar.skills.map((item) => (
-                    <span
-                      key={item}
-                      className="px-3.5 py-1.5 rounded-lg bg-obsidian-surface text-mineral-light text-sm font-sans font-medium"
+                {/* Clean Editorial Typographic Rows */}
+                <div className="border-t border-white/[0.06] pt-4 space-y-2.5">
+                  {pillar.technologies.map((tech) => (
+                    <div 
+                      key={tech.name} 
+                      className="flex items-center justify-between text-xs sm:text-sm font-sans gap-4 py-1 border-b border-white/[0.02] last:border-none"
                     >
-                      {item}
-                    </span>
+                      <span className="font-medium text-white tracking-wide">
+                        {tech.name}
+                      </span>
+                      <span className="text-mineral-muted text-right font-mono text-xs truncate max-w-[220px]">
+                        {tech.role}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-
         </div>
 
-        {/* Live System Architecture Benchmark Ledger (Tone and space separation) */}
-        <div data-reveal className="bg-obsidian-elevated rounded-2xl p-6 sm:p-10 space-y-6">
-          {systems.map((sys) => (
-            <div key={sys.name} className="p-6 sm:p-8 rounded-xl bg-obsidian-surface/60 flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="space-y-1.5 max-w-2xl">
-                <h4 className="font-monumental text-2xl font-bold text-white tracking-tight">
-                  {sys.name}
-                </h4>
-                <p className="text-base text-mineral-light font-sans leading-relaxed">
-                  {sys.purpose}
-                </p>
-                <div className="text-sm text-mineral-light font-sans">
-                  {sys.spec}
+        {/* Systems Production Ledger */}
+        <div data-reveal className="space-y-6">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
+            <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted">
+              VERIFIED ARCHITECTURAL BENCHMARKS
+            </span>
+            <span className="font-mono text-xs text-mineral-muted hidden sm:inline">
+              AUDITED TELEMETRY
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {systems.map((sys) => (
+              <div 
+                key={sys.name} 
+                className="p-6 rounded-2xl bg-obsidian-surface border border-white/[0.04] space-y-4 flex flex-col justify-between"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[10px] text-champagne tracking-wider uppercase">
+                      {sys.code}
+                    </span>
+                    <span className="font-mono text-[10px] text-mineral-muted uppercase">
+                      {sys.latencyLabel}
+                    </span>
+                  </div>
+
+                  <h5 className="font-monumental text-xl font-bold text-white tracking-tight">
+                    {sys.name}
+                  </h5>
+
+                  <p className="text-xs text-mineral-light font-sans leading-relaxed">
+                    {sys.purpose}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/[0.04] flex items-baseline justify-between">
+                  <span className="font-monumental text-2xl font-bold text-inferno">
+                    {sys.latency}
+                  </span>
+                  <span className="text-[11px] text-mineral font-mono">
+                    Deterministic SLA
+                  </span>
                 </div>
               </div>
-              <div className="text-left md:text-right shrink-0">
-                <span className="font-monumental text-3xl text-emerald-400 font-bold block">
-                  {sys.latency}
-                </span>
-                <span className="text-sm text-mineral font-sans">
-                  Verified In Production
-                </span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Chapter 4 Center Numeral */}
+        {/* Chapter 4 Numeral */}
         <div data-reveal className="text-center pt-8">
           <div className="inline-flex flex-col items-center gap-2">
             <span className="font-monumental text-2xl font-bold text-white">

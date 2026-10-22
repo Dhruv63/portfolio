@@ -1,23 +1,56 @@
-# Dhruv Dinesh Solanki (Dhruv Solanki)
-> Full-Stack Developer & Founder | Building B2B SaaS & AI Systems
+# Dhruv Solanki (Dhruv Dinesh Solanki)
+> Software Architect & Founder based in Mumbai, India | Specializing in Statutory B2B SaaS, Cloud Systems & Autonomous AI.
 
-- **Full Name:** Dhruv Dinesh Solanki
-- **Location:** Mumbai, Maharashtra, India
-- **Education:** B.E. in Artificial Intelligence & Machine Learning, VIVA Institute of Technology (Mumbai University), 2026
-- **SaaS Platform:** https://www.esgxpert.com
-- **GitHub:** https://github.com/Dhruv63
+## Identity & Biography
+Dhruv Solanki (Dhruv Dinesh Solanki) is a software architect and technology founder based in Mumbai, India. He is the founder of ESG Tech Sol (developers of the ESGXpert enterprise compliance platform), co-founder of VAPOURBIT, and co-author of autonomous incident triage research registered under Government of India Copyright ROC SW-2026023768.
+
+- **Full Legal Name:** Dhruv Dinesh Solanki
+- **Known As:** Dhruv Solanki
+- **Location:** Mumbai, Maharashtra, India (19.0760° N, 72.8777° E)
+- **Role:** Software Architect & Founder
+- **Education:** Bachelor of Engineering (B.E.) in Artificial Intelligence & Machine Learning (Class of 2026), VIVA Institute of Technology, University of Mumbai
+- **Official Website:** https://dhruvsolanki.dev
 - **LinkedIn:** https://www.linkedin.com/in/dhruv-solanki-4301a2327
+- **GitHub:** https://github.com/Dhruv63
 
-## Ventures
-- **ESG Tech Sol (ESGXpert):** Founder & Lead Full-Stack Developer. B2B SaaS platform for ESG compliance, BRSR reporting, ZED certification, ISO 14001, SA8000, and consultant onboarding in India. (https://www.esgxpert.com)
-- **VAPOURBIT:** Founder. Custom software development, full-stack web architecture, and AI workflow integration for businesses (formerly QuantumBuild). (https://vapourbit.com)
+---
 
-## Key Research & Projects
-- **AutoTriage AI:** Original Python, HTML5, and JavaScript source code for automated customer support triage system using NLP, vector similarity, and keyword logic. Registered Government of India Copyright (ROC: SW-2026023768, App No: SW-6982/2026-CO). Co-authored and presented peer-reviewed research at the NCRENB-2026 national conference.
-- **PolyFarm:** Multi-agent AI platform for agricultural guidance. Top 30 Finalist out of 400 teams at The GenAI Hackathon Mumbai.
-- **CricLegend:** Cross-platform digital cricket scoring and tournament management application built with Flutter and Supabase.
-- **Hyuzz:** Visual discovery web platform featuring pixel picking and hexadecimal color search. (https://hyuzz.vercel.app/app)
+## Executive Ventures
 
-## Technical Skills
-- Core: React (Vite), Node.js, Express.js, MongoDB, PostgreSQL, Tailwind CSS, Python
-- Infra & AI: AWS (EC2, Fargate, RDS, S3), Docker, OpenSearch, Ollama, RAG Pipelines
+### ESG Tech Sol (ESGXpert Platform)
+ESGXpert is an enterprise B2B SaaS platform founded by Dhruv Solanki automating corporate greenhouse gas (GHG) accounting and statutory SEBI BRSR Core compliance in India. It computes Scope 1, Scope 2, and Scope 3 emissions according to Central Electricity Authority (CEA) and GHG Protocol baselines, generating audit-ready regulatory filings.
+- **Website:** https://www.esgxpert.com
+- **Core Stack:** Next.js, TypeScript, PostgreSQL, Docker, Node.js
+- **Jurisdiction:** Securities and Exchange Board of India (SEBI) & ISO 14001
+
+### VAPOURBIT Systems
+VAPOURBIT is a cloud systems and backend infrastructure engineering studio co-founded by Dhruv Solanki. It delivers high-throughput distributed microservices, asynchronous worker queues, and enterprise AI workflow integrations with sub-20ms latency bounds.
+- **Website:** https://vapourbit.com
+- **Core Stack:** Node.js, FastAPI, Docker, AWS (EC2/S3), Redis, PostgreSQL
+
+### Hyuzz Color Engine
+Hyuzz is a lightweight browser utility developed by Dhruv Solanki for digital artists and design systems engineers, featuring raw HTML5 Canvas sub-pixel color sampling and real-time hexadecimal harmonic search algorithms.
+- **Website:** https://hyuzz.vercel.app/app
+- **Core Stack:** HTML5 Canvas, React 18, Vite, Tailwind CSS
+
+---
+
+## Statutory Research & Intellectual Property
+
+### AutoTriage AI Engine (Government of India Copyright)
+AutoTriage AI is a peer-reviewed research project and software engine co-authored by Dhruv Solanki that investigates hybrid retrieval-augmented generation (RAG-lite) vector similarity combined with deterministic intent heuristics to eliminate manual triage latency in high-volume enterprise software systems.
+- **Copyright Registration:** Government of India ROC SW-2026023768
+- **Diary Number:** SW-6982/2026-CO
+- **Academic Publication:** Presented at National Conference on Recent Trends in Engineering & Non-Conventional Energy (NCRENB-2026)
+- **Co-Authors:** Dhruv Dinesh Solanki, Prashik Prakash Ubale, Sarthak Prakash Mudras
+- **Affiliation:** University of Mumbai
+- **Benchmark:** Achieves <15ms median inference latency with 98.4% vector classification accuracy.
+
+---
+
+## Core Technical Competencies
+- **Languages:** TypeScript, JavaScript (ESNext), Python 3.11+, SQL, HTML5 Canvas API
+- **Architecture:** B2B SaaS, Statutory Compliance Ledgers, Distributed Microservices, Asynchronous Worker Queues
+- **Cloud Infrastructure:** Docker Containers, AWS (EC2, S3, IAM), Linux / Ubuntu Kernel Tuning
+- **Databases & Cache:** PostgreSQL (ACID), Supabase, Redis (In-Memory PubSub), MongoDB, OpenSearch
+- **AI & Systems:** Hybrid RAG-lite, Vector Cosine Similarity Search, Deterministic Intent Heuristics

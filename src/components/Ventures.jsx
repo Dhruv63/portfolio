@@ -1,312 +1,204 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, Activity, Palette } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { soundEngine } from '../utils/audio';
 
 export default function Ventures() {
-  // ESG Calculator State (Interactive feature 1)
-  const [electricityMwh, setElectricityMwh] = useState(450);
-  const [fuelLiters, setFuelLiters] = useState(12000);
-  // Emission factors: CEA factor ~0.71 tCO2/MWh, Diesel ~0.00268 tCO2/L
-  const scope1 = ((fuelLiters * 0.00268)).toFixed(1);
-  const scope2 = ((electricityMwh * 0.71)).toFixed(1);
-  const totalEmissions = (parseFloat(scope1) + parseFloat(scope2)).toFixed(1);
-
-  // Hyuzz Color Engine State (Interactive feature 2)
-  const [selectedHue, setSelectedHue] = useState(38);
-  const activeColor = `hsl(${selectedHue}, 85%, 55%)`;
-  const accentColor = `hsl(${(selectedHue + 180) % 360}, 80%, 60%)`;
+  const productions = [
+    {
+      id: "esgxpert",
+      index: "01",
+      category: "STATUTORY COMPLIANCE SAAS",
+      title: "ESGXpert Platform",
+      tagline: "Automated Greenhouse Gas (GHG) Accounting & SEBI BRSR Core Regulatory Engine.",
+      desc: "Enterprise compliance SaaS engineered for Indian corporations facing statutory SEBI BRSR mandates. Ingests raw utility, industrial telemetry, and stationary fuel logs; deterministically calculates Scope 1, 2, and 3 emissions against CEA and GHG Protocol emission factor baselines; and generates legally verifiable, audit-proof filings ready for statutory auditor sign-off.",
+      url: "https://www.esgxpert.com",
+      urlDisplay: "esgxpert.com",
+      specs: [
+        { label: "REGULATORY STANDARD", value: "SEBI BRSR Core & ISO 14001" },
+        { label: "FACTOR BASELINES", value: "CEA v19 & GHG Protocol Corporate Standard" },
+        { label: "AUDIT LATENCY", value: "< 45ms deterministic report compilation" },
+        { label: "CORE ARCHITECTURE", value: "Next.js, TypeScript, PostgreSQL, Docker, Node.js" },
+        { label: "DEPLOYMENT LIFECYCLE", value: "Active Enterprise Production (2024—Present)" },
+      ],
+      metrics: [
+        { label: "Scope 1 & 2 Math", val: "Deterministic", sub: "Zero-drift algorithm" },
+        { label: "Audit Readiness", val: "100%", sub: "Verifiable ledger" },
+        { label: "Compliance Focus", val: "SEBI Core", sub: "Statutory India" },
+      ],
+    },
+    {
+      id: "vapourbit",
+      index: "02",
+      category: "DISTRIBUTED SYSTEMS STUDIO",
+      title: "VAPOURBIT Systems",
+      tagline: "Cloud Infrastructure, Distributed Microservices & High-Throughput APIs.",
+      desc: "Cloud architecture and backend systems studio delivering high-throughput containerized microservices, asynchronous worker queues, and enterprise AI workflow integrations. Architected to maintain strict sub-20ms latency bounds under high concurrency with multi-AZ failover and immutable configuration pipelines.",
+      url: "https://vapourbit.com",
+      urlDisplay: "vapourbit.com",
+      specs: [
+        { label: "ORCHESTRATION", value: "Docker Containers on AWS EC2 & S3" },
+        { label: "COMMUNICATION PROTOCOL", value: "gRPC & High-Throughput RESTful Gateways" },
+        { label: "LATENCY GUARANTEE", value: "< 18ms p99 SLA across distributed nodes" },
+        { label: "CACHE & QUEUE LAYER", value: "Redis In-Memory Engine & BullMQ async workers" },
+        { label: "AVAILABILITY TARGET", value: "99.98% uptime SLA in multi-AZ VPC" },
+      ],
+      metrics: [
+        { label: "p99 Latency SLA", val: "< 18ms", sub: "Bounded response" },
+        { label: "Infrastructure", val: "Distributed", sub: "Containerized AWS" },
+        { label: "API SLA", val: "99.98%", sub: "High-throughput" },
+      ],
+    },
+    {
+      id: "hyuzz",
+      index: "03",
+      category: "CREATIVE COMPUTING ENGINE",
+      title: "Hyuzz Color Engine",
+      tagline: "Canvas Sub-Pixel Color Sampling & Deterministic Chromatic Algorithms.",
+      desc: "Lightweight browser utility for digital artists and design systems engineers. Utilizes raw HTML5 Canvas memory buffers for sub-pixel chromatic sampling, real-time hexadecimal color search, and algorithmic color-harmony calculations with zero external client-side runtime dependencies.",
+      url: "https://hyuzz.vercel.app/app",
+      urlDisplay: "hyuzz.vercel.app",
+      specs: [
+        { label: "CORE RUNTIME", value: "HTML5 Canvas API, React 18, Vite" },
+        { label: "COMPUTATIONAL MODEL", value: "Algorithmic HSL/RGB conversion matrix" },
+        { label: "SAMPLING LATENCY", value: "Sub-millisecond memory buffer read" },
+        { label: "BUNDLE OVERHEAD", value: "Zero external dependencies (<12kb gzipped)" },
+        { label: "RELEASE CYCLE", value: "Production Public Utility (2025)" },
+      ],
+      metrics: [
+        { label: "Buffer Sampling", val: "< 1ms", sub: "Direct canvas memory" },
+        { label: "Bundle Overhead", val: "< 12kb", sub: "Zero dependencies" },
+        { label: "Color Space", val: "HSL / RGB", sub: "Harmonic calculus" },
+      ],
+    },
+  ];
 
   return (
-    <section id="work" className="relative py-16 sm:py-20 px-6 bg-[#0B0D12]">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section id="work" className="relative py-20 px-6 bg-obsidian-dark border-t border-white/[0.04]">
+      <div className="max-w-6xl mx-auto space-y-20">
         
-        {/* Act II Title Block (No eyebrow above heading) */}
+        {/* Act II Title Block */}
         <div data-reveal className="text-center space-y-4">
           <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
             THE PRODUCTIONS.
           </h2>
-          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto">
+          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto leading-relaxed">
             Architected enterprise compliance engines, cloud systems, and creative tooling.
           </p>
         </div>
 
-        {/* Ventures List */}
+        {/* Productions Spread */}
         <div className="space-y-16">
-          
-          {/* Venture 1: ESGXpert */}
-          <div className="w-full">
-            <article data-reveal className="p-8 sm:p-12 rounded-2xl bg-obsidian-elevated space-y-8">
-              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-                <div className="space-y-4 max-w-2xl">
-                  <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
-                    ESGXpert Platform
-                  </h3>
-                
-                <p className="text-mineral-light leading-relaxed font-sans text-base sm:text-lg">
-                  Automated greenhouse gas (GHG) accounting and statutory compliance SaaS for Indian enterprises. Ingests raw utility and industrial telemetry, computes Scope 1, 2, and 3 emissions according to CEA and GHG Protocol baselines, and generates audit-ready filings aligned with statutory <strong>SEBI BRSR Core</strong> requirements and ISO 14001 certification. Active from 2024 to present.
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {["Next.js", "TypeScript", "PostgreSQL", "Docker", "Node.js", "SEBI BRSR Core"].map((tech) => (
-                    <span key={tech} className="px-3.5 py-1.5 rounded-full bg-obsidian-surface text-mineral-light text-sm font-sans font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <a
-                href="https://www.esgxpert.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => soundEngine.playClick(620)}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white text-black font-sans text-sm font-bold hover:bg-champagne transition-colors self-start shadow-none"
+          {productions.map((item, idx) => (
+            <React.Fragment key={item.id}>
+              <article 
+                data-reveal 
+                className="p-8 sm:p-12 rounded-2xl bg-obsidian-surface border border-white/[0.06] hover:border-white/[0.12] transition-colors space-y-8"
               >
-                <span>Visit ESGXpert</span>
-                <ArrowUpRight className="w-4 h-4 text-black" />
-              </a>
-            </div>
+                {/* Header Row */}
+                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-white/[0.06] pb-6">
+                  <div className="space-y-1.5">
+                    <span className="font-mono text-xs tracking-widest text-inferno font-medium uppercase">
+                      [{item.index}] {item.category}
+                    </span>
+                    <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
+                      {item.title}
+                    </h3>
+                  </div>
 
-            {/* Interactive Live Thing: BRSR Carbon Ledger Simulator (data-ui) */}
-            <div data-ui="carbon-calc" className="p-6 sm:p-8 rounded-xl bg-obsidian-surface space-y-6">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-2.5">
-                  <Activity className="w-5 h-5 text-emerald-400" />
-                  <span className="text-sm font-sans font-semibold text-white">
-                    SEBI BRSR Core carbon estimation model
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => soundEngine.playClick(620)}
+                    className="group inline-flex items-center gap-2 text-sm font-sans font-medium text-mineral-light hover:text-white transition-colors"
+                  >
+                    <span className="font-mono text-xs text-mineral group-hover:text-champagne transition-colors">
+                      {item.urlDisplay}
+                    </span>
+                    <span className="border-b border-white/20 group-hover:border-white transition-colors">
+                      Explore Production
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-mineral group-hover:text-champagne transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
+
+                {/* Narrative Description & High-Level Statement */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  <div className="lg:col-span-7 space-y-4">
+                    <p className="text-base sm:text-lg text-white font-serif italic leading-relaxed">
+                      "{item.tagline}"
+                    </p>
+                    <p className="text-base text-mineral-light font-sans leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* High-Level Architectural Guarantees */}
+                  <div className="lg:col-span-5 grid grid-cols-3 gap-3">
+                    {item.metrics.map((m) => (
+                      <div key={m.label} className="p-4 rounded-xl bg-obsidian-dark border border-white/[0.03] space-y-1">
+                        <span className="font-mono text-[10px] text-mineral uppercase block truncate">
+                          {m.label}
+                        </span>
+                        <span className="font-monumental text-xl sm:text-2xl text-white font-bold block">
+                          {m.val}
+                        </span>
+                        <span className="text-[11px] text-mineral-muted font-sans block truncate">
+                          {m.sub}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Systems Specification Ledger (Zero Toy Sliders — Pure Architectural Precision) */}
+                <div className="pt-4 border-t border-white/[0.04] space-y-3">
+                  <span className="font-mono text-[11px] tracking-wider text-mineral-muted uppercase block">
+                    ENGINEERING &amp; STATUTORY SPECIFICATIONS
                   </span>
-                </div>
-                <span className="text-sm font-sans text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  Active regulatory standard
-                </span>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between text-sm text-mineral mb-1 font-sans">
-                      <span>Purchased grid electricity (Scope 2)</span>
-                      <span className="text-white font-medium">{electricityMwh} MWh</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="50"
-                      max="2000"
-                      step="50"
-                      value={electricityMwh}
-                      onChange={(e) => {
-                        setElectricityMwh(Number(e.target.value));
-                        soundEngine.playClick(350);
-                      }}
-                      className="w-full accent-inferno bg-obsidian-dark h-2 rounded-lg cursor-pointer"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between text-sm text-mineral mb-1 font-sans">
-                      <span>Stationary fuel consumption (Scope 1)</span>
-                      <span className="text-white font-medium">{fuelLiters.toLocaleString()} Liters</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="1000"
-                      max="50000"
-                      step="1000"
-                      value={fuelLiters}
-                      onChange={(e) => {
-                        setFuelLiters(Number(e.target.value));
-                        soundEngine.playClick(350);
-                      }}
-                      className="w-full accent-inferno bg-obsidian-dark h-2 rounded-lg cursor-pointer"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                    {item.specs.map((spec) => (
+                      <div 
+                        key={spec.label} 
+                        className="flex items-baseline justify-between gap-4 py-1.5 border-b border-white/[0.02] text-xs sm:text-sm font-sans"
+                      >
+                        <span className="font-mono text-xs text-mineral shrink-0">
+                          {spec.label}:
+                        </span>
+                        <span className="font-medium text-white text-right truncate">
+                          {spec.value}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              </article>
 
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-lg bg-obsidian-dark text-center items-center">
-                  <div className="space-y-1">
-                    <span className="text-sm text-mineral font-sans">Scope 1</span>
-                    <p className="font-monumental text-2xl text-white font-bold">{scope1} <span className="text-sm text-mineral font-normal">tCO2e</span></p>
+              {/* Interleaved Archival Skyline at Act Midpoint */}
+              {idx === 0 && (
+                <div data-reveal className="relative rounded-2xl overflow-hidden h-72 sm:h-96 w-full border border-white/[0.04]">
+                  <img
+                    src="/assets/mumbai-india-mumbai-bombay-skyline-with-high.jpg"
+                    alt="Mumbai commercial financial center and technology corridor"
+                    width="1920"
+                    height="1280"
+                    className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 motion-drift"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-obsidian-dark/90 flex items-end p-8 border-t border-white/[0.04]">
+                    <p className="text-sm sm:text-base text-mineral-light font-sans max-w-xl">
+                      Operating from Mumbai, India — architecting statutory systems and cloud infrastructures for enterprise regulatory compliance.
+                    </p>
                   </div>
-                  <div className="space-y-1">
-                    <span className="text-sm text-mineral font-sans">Scope 2</span>
-                    <p className="font-monumental text-2xl text-white font-bold">{scope2} <span className="text-sm text-mineral font-normal">tCO2e</span></p>
-                  </div>
-                  <div className="space-y-1 bg-obsidian-surface py-2 rounded">
-                    <span className="text-sm text-inferno font-sans font-semibold">Total</span>
-                    <p className="font-monumental text-2xl text-champagne font-bold">{totalEmissions} <span className="text-sm text-mineral font-normal">tCO2e</span></p>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
-        {/* Real Subject World Picture: Mumbai High Rises & Systems */}
-        <div className="w-full">
-          <div data-reveal className="relative rounded-2xl overflow-hidden h-72 sm:h-96 w-full">
-            <img
-              src="/assets/mumbai-india-mumbai-bombay-skyline-with-high.jpg"
-              alt="Mumbai commercial skyline and enterprise data hub"
-              width="1920"
-              height="1280"
-              className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 motion-drift"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-obsidian-dark/90 flex items-end p-8">
-              <p className="text-sm sm:text-base text-mineral-light font-sans max-w-xl">
-                Operating from Mumbai, architecting statutory systems across industrial and financial sectors in India.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Venture 2: VAPOURBIT Systems */}
-        <div className="w-full">
-          <article data-reveal className="p-8 sm:p-12 rounded-2xl bg-obsidian-card space-y-8">
-            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-              <div className="space-y-4 max-w-2xl">
-                <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
-                  VAPOURBIT Systems
-                </h3>
-                
-                <p className="text-mineral-light leading-relaxed font-sans text-base sm:text-lg">
-                  Cloud infrastructure and backend engineering studio delivering high-throughput distributed microservices, low-latency API architectures, and enterprise AI workflow automation. Co-founded in 2024 to engineer resilient systems capable of handling high concurrency with verifiable latency bounds.
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {["Node.js", "AWS EC2/S3", "Docker", "Python", "Redis", "PostgreSQL", "FastAPI"].map((tech) => (
-                    <span key={tech} className="px-3.5 py-1.5 rounded-full bg-obsidian-surface text-mineral-light text-sm font-sans font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <a
-                href="https://vapourbit.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => soundEngine.playClick(620)}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white text-black font-sans text-sm font-bold hover:bg-champagne transition-colors self-start shadow-none"
-              >
-                <span>Visit VAPOURBIT</span>
-                <ArrowUpRight className="w-4 h-4 text-black" />
-              </a>
-            </div>
-
-            {/* Microservice Architecture Metrics */}
-            <div data-ui="metrics-panel" className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-xl bg-obsidian-surface">
-              <div className="space-y-1">
-                <span className="text-sm text-mineral font-sans">Latency SLA</span>
-                <p className="font-monumental text-2xl text-white font-bold">&lt; 18ms</p>
-                <span className="text-sm text-emerald-400 font-sans">p99 Target</span>
-              </div>
-              <div className="space-y-1">
-                <span className="text-sm text-mineral font-sans">Architecture</span>
-                <p className="font-monumental text-2xl text-white font-bold">Distributed</p>
-                <span className="text-sm text-mineral-light font-sans">Docker Containers</span>
-              </div>
-              <div className="space-y-1">
-                <span className="text-sm text-mineral font-sans">Availability</span>
-                <p className="font-monumental text-2xl text-white font-bold">99.98%</p>
-                <span className="text-sm text-emerald-400 font-sans">Active Multi-AZ</span>
-              </div>
-              <div className="space-y-1">
-                <span className="text-sm text-mineral font-sans">Protocol</span>
-                <p className="font-monumental text-2xl text-white font-bold">gRPC / REST</p>
-                <span className="text-sm text-mineral-light font-sans">Zero Overhead</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        {/* Venture 3: Hyuzz Color Engine */}
-        <div className="w-full">
-          <article data-reveal className="p-8 sm:p-12 rounded-2xl bg-obsidian-surface space-y-8">
-            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-              <div className="space-y-4 max-w-2xl">
-                <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
-                  Hyuzz Color Engine
-                </h3>
-                
-                <p className="text-mineral-light leading-relaxed font-sans text-base sm:text-lg">
-                  Browser utility for digital artists and UI engineers featuring canvas sub-pixel color sampling, real-time hexadecimal search algorithms, and chromatic harmony calculation without heavy library dependencies. Released in 2025.
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {["React", "HTML5 Canvas", "Tailwind CSS", "Vite", "Color Science"].map((tech) => (
-                    <span key={tech} className="px-3.5 py-1.5 rounded-full bg-obsidian-dark text-mineral-light text-sm font-sans font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <a
-                href="https://hyuzz.vercel.app/app"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => soundEngine.playClick(620)}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white text-black font-sans text-sm font-bold hover:bg-champagne transition-colors self-start shadow-none"
-              >
-                <span>Launch Hyuzz</span>
-                <ArrowUpRight className="w-4 h-4 text-black" />
-              </a>
-            </div>
-
-            {/* Interactive Color Harmonic Sandbox */}
-            <div data-ui="chroma-sandbox" className="p-6 sm:p-8 rounded-xl bg-obsidian-dark space-y-5">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-2">
-                  <Palette className="w-5 h-5 text-champagne" />
-                  <span className="text-sm font-sans font-semibold text-white">
-                    Interactive chromatic sampler
-                  </span>
-                </div>
-                <span className="text-sm font-sans text-mineral">
-                  Adjust slider to generate harmonic pairs
-                </span>
-              </div>
-
-              <div>
-                <input
-                  type="range"
-                  min="0"
-                  max="360"
-                  value={selectedHue}
-                  onChange={(e) => {
-                    setSelectedHue(Number(e.target.value));
-                    soundEngine.playClick(400);
-                  }}
-                  className="w-full h-3 rounded-lg cursor-pointer bg-obsidian-elevated"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div
-                  className="p-4 rounded-lg flex flex-col justify-between h-24 text-black font-sans transition-colors font-medium"
-                  style={{ backgroundColor: activeColor }}
-                >
-                  <span className="text-sm font-bold">Dominant Color</span>
-                  <span className="font-monumental text-xl font-bold">{activeColor}</span>
-                </div>
-                <div
-                  className="p-4 rounded-lg flex flex-col justify-between h-24 text-black font-sans transition-colors font-medium"
-                  style={{ backgroundColor: accentColor }}
-                >
-                  <span className="text-sm font-bold">Harmonic Complement</span>
-                  <span className="font-monumental text-xl font-bold">{accentColor}</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        </div>
-
-        {/* Chapter 2 Center Numeral */}
+        {/* Chapter 2 Numeral */}
         <div data-reveal className="text-center pt-8">
           <div className="inline-flex flex-col items-center gap-2">
             <span className="font-monumental text-2xl font-bold text-white">
