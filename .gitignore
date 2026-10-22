@@ -7,11 +7,15 @@ node_modules/
 dist/
 build/
 
-# Local env & cache
+# Agent tools & workspace skills
+.agents/
+.taste-skill/
+skills-lock.json
+
+# Local environment & caches
 .env
 .env.local
 .env.*.local
-.taste-skill/
 .eslintcache
 
 # Logs
@@ -34,3 +38,6 @@ Thumbs.db
 # Test isolation policy
 test/
 tests/
+
+# Loose root artifacts
+minimal_linkedin_banner.png
