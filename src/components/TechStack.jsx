@@ -5,54 +5,54 @@ export default function TechStack() {
   const pillars = [
     {
       index: "01",
-      category: "CORE RUNTIMES",
+      category: "LANGUAGES & RUNTIMES",
       title: "Systems & Languages",
-      desc: "Typed, deterministic enterprise execution environments and systems programming.",
+      desc: "Typed execution environments and modern systems languages.",
       technologies: [
-        { name: "TypeScript 5.x", role: "Strictly typed enterprise contracts" },
-        { name: "JavaScript (ESNext)", role: "Modern async event-loop runtime" },
-        { name: "Python 3.11+", role: "High-performance scientific & AI backends" },
-        { name: "SQL & PostgreSQL Dialect", role: "Deterministic relational queries" },
-        { name: "HTML5 Canvas API", role: "Low-overhead visual & physics rendering" },
+        { name: "TypeScript 5.x", role: "Strict types across contracts and schemas" },
+        { name: "JavaScript (ESNext)", role: "Event loop and async concurrency" },
+        { name: "Python 3.11+", role: "Data pipelines and machine learning" },
+        { name: "SQL (PostgreSQL)", role: "Relational schema design and indexing" },
+        { name: "HTML5 Canvas API", role: "2D graphics and pixel buffer manipulation" },
       ],
     },
     {
       index: "02",
-      category: "DISTRIBUTED CLOUD",
+      category: "BACKEND & CLOUD",
       title: "Cloud Infrastructure",
-      desc: "Low-latency microservices, async worker queues, and containerized deployments.",
+      desc: "Containerized microservices, background queues, and cloud deployments.",
       technologies: [
-        { name: "Node.js (LTS)", role: "Event-driven asynchronous I/O" },
-        { name: "FastAPI & Express", role: "High-throughput RESTful gateways" },
-        { name: "Docker Containers", role: "Immutable production environments" },
-        { name: "AWS Cloud Infrastructure", role: "EC2 compute, S3 assets, IAM policies" },
-        { name: "Linux / Ubuntu Server", role: "Hardened kernel configuration & tuning" },
+        { name: "Node.js (LTS)", role: "Asynchronous microservice backends" },
+        { name: "FastAPI & Express", role: "Typed REST APIs and service routing" },
+        { name: "Docker", role: "Immutable containerized images" },
+        { name: "AWS Infrastructure", role: "EC2 compute, S3 storage, IAM security" },
+        { name: "Linux (Ubuntu)", role: "Server configuration and process management" },
       ],
     },
     {
       index: "03",
-      category: "STORAGE ARCHITECTURE",
-      title: "Data Storage & Caching",
-      desc: "Relational statutory ledgers and distributed in-memory cache architectures.",
+      category: "DATA ARCHITECTURE",
+      title: "Databases & Storage",
+      desc: "Relational ledgers, in-memory caching, and document storage.",
       technologies: [
-        { name: "PostgreSQL (ACID)", role: "Statutory compliance ledgers & schemas" },
-        { name: "Supabase Architecture", role: "Real-time subscriptions & row-level security" },
-        { name: "Redis In-Memory Engine", role: "Sub-millisecond caching & Pub/Sub" },
-        { name: "MongoDB Cluster", role: "Unstructured document storage" },
-        { name: "OpenSearch Indexing", role: "Distributed full-text retrieval" },
+        { name: "PostgreSQL", role: "Transactional records with schema constraints" },
+        { name: "Redis", role: "Low-latency caching and queue broker" },
+        { name: "Supabase", role: "Row-level security and real-time triggers" },
+        { name: "MongoDB", role: "Flexible JSON document stores" },
+        { name: "OpenSearch", role: "Full-text indexing and log analysis" },
       ],
     },
     {
       index: "04",
-      category: "APPLIED INTELLIGENCE",
-      title: "Applied AI & Interfaces",
-      desc: "Semantic vector retrieval, intent classification engines, and reactive web UI.",
+      category: "FRONTEND & AI",
+      title: "Applied AI & Web UI",
+      desc: "Semantic vector search, local heuristics, and component architectures.",
       technologies: [
-        { name: "React 18 & Next.js", role: "Predictable, componentized reactive interfaces" },
-        { name: "RAG-lite Embeddings", role: "Lightweight semantic retrieval pipelines" },
-        { name: "Vector Cosine Similarity", role: "Deterministic incident classification" },
-        { name: "Tailwind CSS Engine", role: "Restrained, tokenized visual hierarchy" },
-        { name: "Web Audio Synthesizer", role: "Procedural soundscape generation" },
+        { name: "React 18 & Next.js", role: "Componentized reactive user interfaces" },
+        { name: "Vector Embeddings", role: "Cosine similarity calculation and search" },
+        { name: "Tailwind CSS", role: "Tokenized design system implementation" },
+        { name: "Web Audio API", role: "Procedural sound generation and UI feedback" },
+        { name: "Vite", role: "Fast ES module build and bundling pipeline" },
       ],
     },
   ];
@@ -60,27 +60,27 @@ export default function TechStack() {
   const systems = [
     {
       code: "SEBI-BRSR-01",
-      name: "Statutory Compliance Engine",
-      purpose: "SEBI BRSR Core corporate carbon calculation ledger with automated factor estimation.",
+      name: "Carbon Accounting Engine",
+      purpose: "Calculates Scope 1, 2, and 3 emissions against CEA factors and generates SEBI compliance reports.",
       latency: "< 45ms",
-      latencyLabel: "p95 export",
-      spec: "Deterministic mathematical model strictly calibrated against CEA emission factors.",
+      latencyLabel: "export latency",
+      spec: "Mathematical model verified against CEA CO2 database.",
     },
     {
       code: "GATEWAY-02",
-      name: "Cloud Microservice Architecture",
-      purpose: "High-throughput asynchronous API gateway and distributed worker queue pool.",
+      name: "Microservice API Gateway",
+      purpose: "Asynchronous HTTP/gRPC routing layer with BullMQ background worker pools.",
       latency: "< 18ms",
-      latencyLabel: "p99 SLA",
-      spec: "Containerized, auto-scaling AWS infrastructure with Redis distributed caching.",
+      latencyLabel: "p95 SLA",
+      spec: "Containerized Docker services on AWS with Redis caching.",
     },
     {
       code: "ROC-SW-03",
-      name: "Autonomous Triage Core",
-      purpose: "Government of India registered triage engine combining RAG-lite vector similarity with heuristics.",
+      name: "AutoTriage AI Engine",
+      purpose: "Hybrid ticket classification combining local vector similarity with rule-based routing.",
       latency: "< 12ms",
       latencyLabel: "inference",
-      spec: "Statutory computer science copyright registration ROC SW-2026023768.",
+      spec: "Registered research paper and software entry (ROC SW-2026023768).",
     },
   ];
 
@@ -94,14 +94,14 @@ export default function TechStack() {
             <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.28em] text-champagne">
               <span>ACT IV</span>
               <span className="text-white/20">—</span>
-              <span>SYSTEMS ARSENAL &amp; RUNTIMES</span>
+              <span>ARCHITECTURE &amp; RUNTIMES</span>
             </div>
-            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight uppercase leading-[0.92]">
               THE ARSENAL.
             </h2>
           </div>
           <p className="font-serif italic text-lg sm:text-2xl text-mineral max-w-lg leading-snug md:text-right">
-            Production-proven technologies, cloud infrastructure, and computational engines.
+            Production technologies, infrastructure components, and engineering practices.
           </p>
         </div>
 
@@ -109,36 +109,36 @@ export default function TechStack() {
         <div data-reveal className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start pb-16 border-b border-white/[0.08]">
           <div className="lg:col-span-5 space-y-4 lg:pr-6 lg:border-r lg:border-white/[0.06]">
             <span className="font-mono text-xs uppercase tracking-widest text-champagne block font-medium">
-              // ARCHITECTURAL PHILOSOPHY
+              // CORE PRACTICES
             </span>
-            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-normal tracking-tight">
-              Deterministic Foundations
+            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
+              Engineering Principles
             </h3>
             <p className="text-base text-[#DCDFE8] font-sans leading-relaxed">
-              Every layer from statutory SEBI BRSR compliance to distributed microservice endpoints is engineered with immutable schema contracts, end-to-end type safety, and zero-compromise audit trails.
+              Systems engineered around strict schema validation, end-to-end type safety, and verifiable audit trails. Whether building regulatory carbon accounting platforms or microservice API backends, every layer prioritizes clarity, data integrity, and reproducible behavior.
             </p>
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
             <div className="py-4 sm:py-0 sm:px-6 first:sm:pl-0 space-y-2">
-              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">01 / IMMUTABILITY</span>
-              <h4 className="font-sans font-semibold text-white text-base">Strict Schemas</h4>
+              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">01 / DATA INTEGRITY</span>
+              <h4 className="font-sans font-semibold text-white text-base">Schema Contracts</h4>
               <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
-                Guaranteed schema validation on all inputs, database states, and API payloads.
+                Zod, TypeScript, and database constraints enforce valid data across API boundaries and storage.
               </p>
             </div>
             <div className="py-4 sm:py-0 sm:px-6 space-y-2">
-              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">02 / LATENCY</span>
-              <h4 className="font-sans font-semibold text-white text-base">Bounded SLAs</h4>
+              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">02 / RELIABILITY</span>
+              <h4 className="font-sans font-semibold text-white text-base">Fault Isolation</h4>
               <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
-                Sub-20ms median latency bounds across cloud network calls and async workers.
+                Isolated worker queues, health checks, and connection pooling prevent cascading service failures.
               </p>
             </div>
             <div className="py-4 sm:py-0 sm:px-6 last:sm:pr-0 space-y-2">
               <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">03 / AUDITABILITY</span>
-              <h4 className="font-sans font-semibold text-white text-base">Regulatory Proof</h4>
+              <h4 className="font-sans font-semibold text-white text-base">Verifiable Trails</h4>
               <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
-                100% reproducible audit trails engineered for statutory compliance authorities.
+                Append-only ledgers and structured logging ensure computations can be inspected and reproduced.
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function TechStack() {
                     </span>
                   </div>
 
-                  <h4 className="font-monumental text-2xl text-white font-normal tracking-tight group-hover:text-champagne transition-colors">
+                  <h4 className="font-monumental text-2xl text-white font-bold tracking-tight group-hover:text-champagne transition-colors">
                     {pillar.title}
                   </h4>
 
@@ -226,7 +226,7 @@ export default function TechStack() {
                     </span>
                   </div>
 
-                  <h5 className="font-monumental text-xl sm:text-2xl font-normal text-white tracking-tight">
+                  <h5 className="font-monumental text-xl sm:text-2xl font-bold text-white tracking-tight">
                     {sys.name}
                   </h5>
 
@@ -236,7 +236,7 @@ export default function TechStack() {
                 </div>
 
                 <div className="pt-4 border-t border-white/[0.06] flex items-baseline justify-between">
-                  <span className="font-monumental text-3xl font-normal text-inferno">
+                  <span className="font-monumental text-3xl font-bold text-inferno">
                     {sys.latency}
                   </span>
                   <span className="text-xs text-mineral-light font-mono">

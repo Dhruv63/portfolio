@@ -9,65 +9,65 @@ export default function Ventures() {
       index: "01",
       category: "ENTERPRISE CLIMATE SAAS",
       title: "ESGXpert Platform",
-      tagline: "Automated Greenhouse Gas (GHG) Accounting & SEBI BRSR Core Regulatory Engine.",
-      desc: "Enterprise compliance platform engineered for Indian corporations reporting under SEBI BRSR Core guidelines. Ingests utility consumption, stationary fuel logs, and supply chain telemetry to calculate Scope 1, 2, and 3 emissions against CEA and GHG Protocol baselines, generating auditor-ready compliance reports.",
+      tagline: "Automated Greenhouse Gas (GHG) Accounting & SEBI BRSR Reporting Engine.",
+      desc: "Compliance SaaS engineered for Indian enterprises reporting under SEBI BRSR Core guidelines. Ingests electricity bills, fuel consumption logs, and supply chain telemetry to calculate Scope 1, 2, and 3 emissions against CEA factors and GHG Protocol baselines, generating auditor-ready compliance reports.",
       url: "https://www.esgxpert.com",
       urlDisplay: "esgxpert.com",
       specs: [
-        { label: "REGULATORY STANDARD", value: "SEBI BRSR Core & ISO 14001" },
-        { label: "FACTOR BASELINES", value: "CEA v19 & GHG Protocol Corporate Standard" },
-        { label: "REPORT GENERATION", value: "< 45ms automated report compilation" },
+        { label: "REGULATORY STANDARD", value: "SEBI BRSR Core & ISO 14064" },
+        { label: "EMISSION FACTORS", value: "CEA CO2 Baseline Database v19 & GHG Protocol" },
+        { label: "REPORT COMPILATION", value: "Automated PDF and structured spreadsheet exports with verifiable calculations" },
         { label: "CORE ARCHITECTURE", value: "Next.js, TypeScript, PostgreSQL, Docker, Node.js" },
-        { label: "DEPLOYMENT LIFECYCLE", value: "Active Enterprise Production (2024—Present)" },
+        { label: "DEPLOYMENT", value: "Active Production (2024—Present)" },
       ],
       metrics: [
-        { label: "Emissions Math", val: "Automated", sub: "Scope 1, 2 & 3" },
-        { label: "Audit Readiness", val: "100%", sub: "Verifiable reports" },
-        { label: "Regulatory Focus", val: "SEBI Core", sub: "Indian mandates" },
+        { label: "Scope Coverage", val: "Scope 1, 2 & 3", sub: "Automated calculation" },
+        { label: "Audit Trail", val: "100%", sub: "Verifiable reports" },
+        { label: "Compliance Focus", val: "SEBI Core", sub: "Indian BRSR framework" },
       ],
     },
     {
       id: "vapourbit",
       index: "02",
-      category: "DISTRIBUTED SYSTEMS PRACTICE",
+      category: "CLOUD & BACKEND SYSTEMS",
       title: "VAPOURBIT Systems",
-      tagline: "Cloud Infrastructure, Distributed Microservices & High-Throughput APIs.",
-      desc: "Cloud architecture and backend systems practice delivering high-throughput containerized microservices, asynchronous worker queues, and resilient API architectures. Designed to maintain sub-20ms latency bounds with multi-AZ failover and automated deployment pipelines.",
+      tagline: "Containerized Microservices, Worker Pipelines & High-Throughput APIs.",
+      desc: "Backend engineering practice delivering containerized microservices, asynchronous worker pipelines, and low-latency API gateways. Designed with multi-AZ failover, Redis caching, and automated deployment workflows on AWS.",
       url: "https://vapourbit.com",
       urlDisplay: "vapourbit.com",
       specs: [
         { label: "ORCHESTRATION", value: "Docker Containers on AWS EC2 & S3" },
-        { label: "COMMUNICATION PROTOCOL", value: "gRPC & High-Throughput RESTful Gateways" },
-        { label: "LATENCY TARGET", value: "< 18ms p99 SLA across distributed nodes" },
-        { label: "CACHE & QUEUE LAYER", value: "Redis In-Memory Engine & BullMQ async workers" },
-        { label: "AVAILABILITY TARGET", value: "99.98% uptime SLA in multi-AZ VPC" },
+        { label: "COMMUNICATION", value: "RESTful Gateways & gRPC Services" },
+        { label: "MESSAGE QUEUE", value: "BullMQ background workers on Redis cluster" },
+        { label: "DATA PERSISTENCE", value: "PostgreSQL with connection pooling" },
+        { label: "OBSERVABILITY", value: "Structured JSON logging & health telemetry" },
       ],
       metrics: [
-        { label: "p99 Latency SLA", val: "< 18ms", sub: "Bounded response" },
-        { label: "Infrastructure", val: "Distributed", sub: "Containerized AWS" },
-        { label: "API SLA", val: "99.98%", sub: "High-throughput" },
+        { label: "Response Time", val: "< 25ms", sub: "p95 API response" },
+        { label: "Infrastructure", val: "Containerized", sub: "Docker on AWS" },
+        { label: "Availability", val: "99.9%", sub: "Multi-AZ VPC" },
       ],
     },
     {
       id: "hyuzz",
       index: "03",
-      category: "FRONTEND COMPUTING UTILITY",
+      category: "BROWSER GRAPHICS UTILITY",
       title: "Hyuzz Color Engine",
-      tagline: "Client-Side Canvas Color Extraction & Harmonization Utility.",
-      desc: "Zero-dependency browser tool for designers and developers. Reads canvas pixel buffers directly for instant color sampling, palette extraction, and color harmony calculations with a sub-12kb bundle size.",
+      tagline: "Client-Side Canvas Color Extraction & Palette Tool.",
+      desc: "A zero-dependency browser tool for designers and developers. Reads raw HTML5 Canvas 2D image data directly to sample colors, extract dominant palettes, and calculate complementary harmonies without server round-trips.",
       url: "https://hyuzz.vercel.app/app",
       urlDisplay: "hyuzz.vercel.app",
       specs: [
-        { label: "CORE RUNTIME", value: "HTML5 Canvas API, React 18, Vite" },
-        { label: "COLOR MODEL", value: "Direct Canvas 2D ImageData & HSL/RGB conversion" },
-        { label: "SAMPLING LATENCY", value: "< 1ms direct pixel buffer read" },
-        { label: "BUNDLE OVERHEAD", value: "Zero external dependencies (<12kb gzipped)" },
-        { label: "RELEASE CYCLE", value: "Production Public Utility (2025)" },
+        { label: "CORE RUNTIME", value: "HTML5 Canvas 2D Context, React 18, Vite" },
+        { label: "SAMPLING METHOD", value: "Direct Canvas 2D ImageData buffer extraction" },
+        { label: "COLOR MODELS", value: "HEX, RGB, HSL conversion with WCAG contrast math" },
+        { label: "BUNDLE FOOTPRINT", value: "< 12kb gzipped (zero external runtime dependencies)" },
+        { label: "AVAILABILITY", value: "Open Web Utility (Live at hyuzz.vercel.app)" },
       ],
       metrics: [
-        { label: "Buffer Sampling", val: "< 1ms", sub: "Direct canvas memory" },
+        { label: "Processing", val: "Client-Side", sub: "Zero server latency" },
         { label: "Bundle Overhead", val: "< 12kb", sub: "Zero dependencies" },
-        { label: "Color Models", val: "HSL & RGB", sub: "Palette harmony" },
+        { label: "Color Models", val: "HEX, RGB, HSL", sub: "Palette harmonies" },
       ],
     },
   ];
@@ -84,7 +84,7 @@ export default function Ventures() {
               <span className="text-white/20">—</span>
               <span>VENTURES &amp; SYSTEMS</span>
             </div>
-            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight uppercase leading-[0.92]">
               THE VENTURES.
             </h2>
           </div>
@@ -110,7 +110,7 @@ export default function Ventures() {
                     {/* Index & Category Stamp */}
                     <div className="space-y-2">
                       <div className="flex items-baseline justify-between">
-                        <span className="font-monumental text-6xl sm:text-7xl font-normal text-white group-hover:text-champagne transition-colors leading-none">
+                        <span className="font-monumental text-6xl sm:text-7xl font-bold text-white group-hover:text-champagne transition-colors leading-none">
                           {item.index}
                         </span>
                         <a
@@ -142,7 +142,7 @@ export default function Ventures() {
                             <span className="font-mono text-[11px] text-[#A6ACBE] uppercase tracking-wider block">
                               {m.label}
                             </span>
-                            <span className="font-monumental text-2xl text-white font-normal block tracking-tight">
+                            <span className="font-monumental text-2xl text-white font-bold block tracking-tight">
                               {m.val}
                             </span>
                             <span className="text-xs text-mineral-light font-sans block">
@@ -160,7 +160,7 @@ export default function Ventures() {
 
                     {/* Title & Tagline */}
                     <div className="space-y-3">
-                      <h3 className="font-monumental text-3xl sm:text-5xl text-white font-normal tracking-tight">
+                      <h3 className="font-monumental text-3xl sm:text-5xl text-white font-bold tracking-tight">
                         {item.title}
                       </h3>
                       <p className="text-xl sm:text-2xl text-white/90 font-serif italic leading-relaxed">
@@ -176,9 +176,9 @@ export default function Ventures() {
                     {/* Full-Width Engineering Specification Ledger (High Contrast Tabular Architecture) */}
                     <div className="pt-6 border-t border-white/[0.12] space-y-4">
                       <div className="flex items-center justify-between text-xs font-mono tracking-widest text-mineral-light uppercase">
-                        <span className="text-white font-medium">SYSTEM SPECIFICATIONS &amp; STATUTORY LEDGER</span>
+                        <span className="text-white font-medium">SYSTEM SPECIFICATIONS &amp; ARCHITECTURE</span>
                         <span className="text-white/30 select-none">•</span>
-                        <span className="text-champagne">DETERMINISTIC COMPILATION</span>
+                        <span className="text-champagne">VERIFIED PRODUCTION STANDARDS</span>
                       </div>
 
                       <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">

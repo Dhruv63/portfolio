@@ -23,14 +23,14 @@ export default function Footer() {
             <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.28em] text-champagne">
               <span>ACT V</span>
               <span className="text-white/20">—</span>
-              <span>DIRECT TRANSMISSION</span>
+              <span>DIRECT CONTACT</span>
             </div>
-            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight uppercase leading-[0.92]">
               TRANSMISSION.
             </h2>
           </div>
           <p className="font-serif italic text-lg sm:text-2xl text-mineral max-w-lg leading-snug md:text-right">
-            Open for technical architecture advisory, enterprise SaaS challenges, and venture engineering.
+            Open for software engineering opportunities, technical advisory, and venture collaboration.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Biography & Principles (Cols 1–7) */}
           <div className="lg:col-span-7 space-y-6 lg:pr-8 lg:border-r lg:border-white/[0.06]">
-            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-normal tracking-tight">
+            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
               Dhruv Dinesh Solanki
             </h3>
 
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted block">
-                DIRECT INBOX ACCESS
+                DIRECT CONTACT
               </span>
               <p className="text-mineral-light text-sm sm:text-base font-sans leading-relaxed">
                 Connect directly for co-founding discussions, software architecture, or venture engineering inquiries.
@@ -101,7 +101,7 @@ export default function Footer() {
             {/* Verified External Nodes (Sharp hairline grid, zero rounded boxes) */}
             <div className="space-y-3 pt-2">
               <span className="font-mono text-xs uppercase tracking-widest text-champagne block font-medium">
-                VERIFIED NETWORK NODES
+                VERIFIED PROFILES &amp; LINKS
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.12] border border-white/[0.12]">
                 <a
@@ -166,7 +166,7 @@ export default function Footer() {
 
         {/* Monumental Designed Close */}
         <div data-reveal className="pt-6 space-y-8">
-          <div className="font-monumental text-6xl sm:text-8xl md:text-9xl font-normal text-white/[0.08] hover:text-white/[0.15] transition-colors tracking-tight select-none uppercase text-center leading-none">
+          <div className="font-monumental text-6xl sm:text-8xl md:text-9xl font-extrabold text-white/[0.08] hover:text-white/[0.15] transition-colors tracking-tight select-none uppercase text-center leading-none">
             DHRUV SOLANKI
           </div>
 

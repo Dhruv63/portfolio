@@ -3,30 +3,10 @@ import { Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import { soundEngine } from '../utils/audio';
 
 export default function Navbar() {
-  const [time, setTime] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [activeSection, setActiveSection] = useState('prologue');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTime(
-        new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'Asia/Kolkata',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        }).format(now)
-      );
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Reading progress and scroll spy
   useEffect(() => {
@@ -104,32 +84,29 @@ export default function Navbar() {
     { id: 'prologue', href: '#prologue', label: 'I. Prologue' },
     { id: 'work', href: '#work', label: 'II. Ventures' },
     { id: 'research', href: '#research', label: 'III. Research' },
-    { id: 'stack', href: '#stack', label: 'IV. Arsenal' },
-    { id: 'contact', href: '#contact', label: 'V. Transmit' },
+    { id: 'stack', href: '#stack', label: 'IV. Architecture' },
+    { id: 'contact', href: '#contact', label: 'V. Contact' },
   ];
 
   const currentActiveLink = navLinks.find((l) => l.id === activeSection) || navLinks[0];
 
   return (
-    <header className="sticky top-0 z-40 bg-obsidian-dark/95 backdrop-blur-md border-b border-white/[0.04]">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-40 bg-obsidian-dark/95 backdrop-blur-md border-b border-white/[0.04] px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="max-w-[1440px] mx-auto h-16 flex items-center justify-between relative">
 
-        {/* Left: Brand Monogram */}
+        {/* Left: Brand Monogram (Aligned to 1440px datum) */}
         <a
           href="#prologue"
           onClick={() => soundEngine.playClick(600)}
-          className="group flex items-center gap-3 shrink-0"
+          className="group flex items-center shrink-0"
         >
-          <span className="font-monumental text-lg sm:text-xl font-bold text-white group-hover:text-champagne transition-colors">
+          <span className="font-monumental text-lg sm:text-xl font-bold text-white group-hover:text-champagne transition-colors tracking-tight">
             DHRUV SOLANKI
-          </span>
-          <span className="hidden xl:inline-block text-[10px] text-brass-aged px-2 py-0.5 border border-brass-aged/30 deco-chamfer-sm uppercase tracking-widest font-mono">
-            ARCHITECT
           </span>
         </a>
 
-        {/* Center: Desktop Chapter Links with Scroll-Spy & Active States */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-sans" aria-label="Main Navigation">
+        {/* Center: Desktop Chapter Links with Scroll-Spy & Active States (Anchored to true center) */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-sans absolute left-1/2 -translate-x-1/2 pointer-events-auto" aria-label="Main Navigation">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -165,7 +142,7 @@ export default function Navbar() {
           <ChevronDown className={`w-3 h-3 text-mineral transition-transform shrink-0 ${mobileMenuOpen ? 'rotate-180' : ''}`} />
         </button>
 
-        {/* Right: Sound Toggle, Keyboard Hints & Live Telemetry */}
+        {/* Right: Sound Toggle (Stable dimension, zero layout shift) */}
         <div className="flex items-center gap-1.5 sm:gap-3 text-sm font-sans text-mineral shrink-0">
 
           <button
@@ -179,7 +156,7 @@ export default function Navbar() {
                 }
                 : undefined
             }
-            className={`deco-chamfer-sm flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 text-xs transition-all duration-300 cursor-pointer ${soundEnabled
+            className={`deco-chamfer-sm flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 text-xs transition-all duration-200 cursor-pointer ${soundEnabled
                 ? 'font-bold'
                 : 'bg-obsidian-surface hover:bg-obsidian-elevated text-mineral-light hover:text-white border border-white/10 hover:border-brass-aged/40'
               }`}
@@ -195,7 +172,7 @@ export default function Navbar() {
                   <span className="w-[2px] bg-black rounded-sm animate-eq-2 inline-block" />
                   <span className="w-[2px] bg-black rounded-sm animate-eq-3 inline-block" />
                 </div>
-                <span className="hidden sm:inline font-mono tracking-tight text-[11px]">Spill Your Time</span>
+                <span className="hidden sm:inline font-sans">Sound</span>
               </>
             ) : (
               <>
@@ -208,16 +185,6 @@ export default function Navbar() {
               M
             </kbd>
           </button>
-
-          <div className="deco-chamfer-sm flex items-center gap-1.5 sm:gap-2 bg-obsidian-surface px-2 sm:px-3 py-1.5 border border-white/[0.06]">
-            <span className="inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500 animate-pulse shrink-0" />
-            <span className="text-[10px] sm:text-xs text-mineral-light tracking-tight font-mono whitespace-nowrap">
-              <span className="hidden sm:inline">Mumbai </span>
-              <span className="sm:hidden">{time ? time.split(':').slice(0, 2).join(':') : '18:00'} IST</span>
-              <span className="hidden sm:inline">{time || '18:00:00'} IST</span>
-            </span>
-          </div>
-
         </div>
 
       </div>

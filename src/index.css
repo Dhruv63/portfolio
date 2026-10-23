@@ -2,26 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@font-face {
-  font-family: "Parkinson-Condensed";
-  src: url("/fonts/parkinson-condensed.woff2") format("woff2"),
-       url("/fonts/parkinson-condensed.woff") format("woff"),
-       url("/fonts/parkinson-condensed.ttf") format("opentype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Parkinson";
-  src: url("/fonts/parkinson-condensed.woff2") format("woff2"),
-       url("/fonts/parkinson-condensed.woff") format("woff"),
-       url("/fonts/parkinson-condensed.ttf") format("opentype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   html {
     font-family: "Clash Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,6 +23,14 @@
     overflow-x: hidden;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
   ::selection {
     background-color: rgba(224, 90, 54, 0.35);
     color: #FFFFFF;
@@ -54,15 +42,15 @@
   }
 }
 
-/* Film Grain Texture for Falter Inferno Noir Atmosphere */
+/* Film Grain Texture for Nocturne Atmosphere */
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E");
 }
 
-/* Monumental Typography Helpers */
+/* Monumental Architectural Typography Helper */
 .title-inferno {
-  font-family: "Parkinson-Condensed", "Parkinson", serif;
-  letter-spacing: -0.01em;
+  font-family: "Syne", "Cabinet Grotesk", sans-serif;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -138,3 +126,4 @@
     scroll-behavior: auto !important;
   }
 }
+ /* reload */

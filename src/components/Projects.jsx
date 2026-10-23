@@ -5,10 +5,10 @@ import { soundEngine } from '../utils/audio';
 export default function Projects() {
   const benchmarks = [
     {
-      metric: "Median Inference Latency",
+      metric: "Median Triage Latency",
       autotriage: "< 14.8 ms",
       traditional: "15 — 45 minutes",
-      advantage: "99.9% Latency Reduction",
+      advantage: "99.9% Faster Resolution",
     },
     {
       metric: "Priority Classification Match",
@@ -17,16 +17,16 @@ export default function Projects() {
       advantage: "+27.2% Precision Gain",
     },
     {
-      metric: "Operational Throughput",
+      metric: "System Throughput",
       autotriage: "10,000+ req / min",
       traditional: "~120 tickets / day / agent",
-      advantage: "Continuous Deterministic Scale",
+      advantage: "Automated Batch Scale",
     },
     {
       metric: "Ambiguity Resolution",
-      autotriage: "Cosine Similarity Fallback",
-      traditional: "Ad-hoc manual re-routing",
-      advantage: "Automated Dispatch",
+      autotriage: "Cosine Similarity Vector Search",
+      traditional: "Manual escalation queue",
+      advantage: "Zero-Touch Routing",
     },
   ];
 
@@ -34,17 +34,17 @@ export default function Projects() {
     {
       num: "01",
       name: "Semantic Embedding Ingestion",
-      desc: "Normalized payload tokenization using lightweight embedding representations to strip network noise while retaining core error signatures.",
+      desc: "Payload tokenization using lightweight embeddings to extract core error signatures while stripping network noise.",
     },
     {
       num: "02",
       name: "Vector Cosine Retrieval",
-      desc: "High-density vector comparison against historical incident clusters to establish probabilistic cluster proximity in sub-8ms.",
+      desc: "Nearest-neighbor vector comparison against indexed incident clusters to calculate similarity scores in sub-8ms.",
     },
     {
       num: "03",
       name: "Deterministic Guardrails",
-      desc: "Rule-based filters verifying authentication, database starvation, and compliance SLA thresholds before final automated dispatch.",
+      desc: "Rule-based verification checking authentication errors, database state, and severity SLA thresholds before dispatch.",
     },
   ];
 
@@ -58,9 +58,9 @@ export default function Projects() {
             <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.28em] text-champagne">
               <span>ACT III</span>
               <span className="text-white/20">—</span>
-              <span>RESEARCH &amp; COMPUTATIONAL SYSTEMS</span>
+              <span>RESEARCH &amp; APPLIED SYSTEMS</span>
             </div>
-            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight uppercase leading-[0.92]">
               AUTONOMOUS TRIAGE.
             </h2>
           </div>
@@ -81,15 +81,15 @@ export default function Projects() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-3">
               <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted block">
-                PEER-REVIEWED SYSTEM SPECIFICATION &amp; ALGORITHMIC PROVENANCE
+                PEER-REVIEWED SYSTEM SPECIFICATION &amp; ACADEMIC RESEARCH
               </span>
-              <h3 className="font-monumental text-3xl sm:text-5xl text-white font-normal tracking-tight">
+              <h3 className="font-monumental text-3xl sm:text-5xl text-white font-bold tracking-tight">
                 AutoTriage AI Engine
               </h3>
             </div>
 
             <p className="text-mineral-light leading-relaxed font-sans text-base sm:text-lg">
-              Published research investigating hybrid retrieval-augmented generation (RAG-lite) vector similarity combined with deterministic intent heuristics to eliminate manual triage latency in high-volume enterprise systems. Formally registered under the Government of India Copyright Office (ROC <strong className="text-white">SW-2026023768</strong>, Diary <strong className="text-white">SW-6982/2026-CO</strong>) and presented at the National Conference on Recent Trends in Engineering &amp; Non-Conventional Energy (NCRENB-2026).
+              Published research investigating automated incident classification by combining lightweight vector embeddings (semantic similarity) with deterministic rule-based filters. The system automatically categorizes and routes high-priority customer tickets without calling expensive external LLM APIs for routine issues. Formally registered under the Government of India Copyright Office (ROC <strong className="text-white">SW-2026023768</strong>, Diary <strong className="text-white">SW-6982/2026-CO</strong>) and presented at the National Conference on Recent Trends in Engineering &amp; Non-Conventional Energy (NCRENB-2026).
             </p>
 
             {/* Academic Colophon Ledger (High Contrast Structured Lines) */}
@@ -100,7 +100,7 @@ export default function Projects() {
               </div>
               <div className="grid grid-cols-12 py-3.5 gap-2">
                 <span className="col-span-4 font-mono text-xs text-[#B8BDCC] uppercase tracking-wider font-medium">AFFILIATION</span>
-                <span className="col-span-8 font-medium text-white">University of Mumbai</span>
+                <span className="col-span-8 font-medium text-white">VIVA Institute of Technology, University of Mumbai</span>
               </div>
               <div className="grid grid-cols-12 py-3.5 gap-2">
                 <span className="col-span-4 font-mono text-xs text-[#B8BDCC] uppercase tracking-wider font-medium">REGISTRATION</span>
@@ -112,7 +112,7 @@ export default function Projects() {
               </div>
               <div className="grid grid-cols-12 py-3.5 gap-2">
                 <span className="col-span-4 font-mono text-xs text-[#B8BDCC] uppercase tracking-wider font-medium">STATUS</span>
-                <span className="col-span-8 font-medium text-emerald-400 font-sans">✓ Verified Statutory Copyright Entry</span>
+                <span className="col-span-8 font-medium text-emerald-400 font-sans">✓ Registered Copyright &amp; Conference Paper</span>
               </div>
             </div>
           </div>
@@ -131,14 +131,14 @@ export default function Projects() {
               />
               <div className="absolute inset-x-0 bottom-0 bg-[#07090D]/90 backdrop-blur-sm flex items-center justify-between p-6 border-t border-white/[0.12]">
                 <p className="text-xs sm:text-sm text-white font-sans max-w-sm font-medium">
-                  Algorithmic foundations and academic computer science research authored and filed in Mumbai, India.
+                  Research authored in Mumbai, India — combining lightweight embeddings with rule-based systems to eliminate manual triage latency.
                 </p>
                 <ShieldCheck className="w-6 h-6 text-champagne shrink-0 ml-4" />
               </div>
             </div>
             <div className="flex items-center justify-between text-[11px] font-mono text-mineral-light tracking-widest uppercase">
-              <span className="text-white/80">THE METROPOLITAN MUSEUM OF ART COLLECTION</span>
-              <span className="text-champagne">1870s VICTORIAN ARCHITECTURE</span>
+              <span className="text-white/80">RESEARCH PROVENANCE &amp; ORIGIN</span>
+              <span className="text-champagne">MUMBAI, INDIA</span>
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function Projects() {
                   </span>
                   <span className="text-white/20 select-none">—</span>
                 </div>
-                <h4 className="font-monumental text-xl sm:text-2xl text-white font-normal tracking-tight">
+                <h4 className="font-monumental text-xl sm:text-2xl text-white font-bold tracking-tight">
                   {step.name}
                 </h4>
                 <p className="text-xs sm:text-sm text-mineral-light font-sans leading-relaxed">
@@ -177,14 +177,14 @@ export default function Projects() {
         <div data-reveal className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-mineral-muted">
-              EMPIRICAL BENCHMARKS // NCRENB-2026 PUBLICATION DATA
+              RESEARCH BENCHMARKS // TESTBED EVALUATION (NCRENB-2026)
             </span>
             <div className="flex items-center gap-3">
               <span className="sm:hidden font-mono text-[11px] text-champagne/80 tracking-wider uppercase">
                 Scroll horizontally →
               </span>
               <span className="hidden sm:inline font-mono text-xs text-mineral-muted">
-                VERIFIED TESTBED CONSTRAINTS
+                EMPIRICAL VERIFICATION
               </span>
             </div>
           </div>

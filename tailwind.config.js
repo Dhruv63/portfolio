@@ -42,11 +42,9 @@ export default {
         }
       },
       fontFamily: {
-        monumental: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
-        parkinson: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
-        deco: ['"Cinzel Decorative"', 'serif'],
-        marcellus: ['"Marcellus"', 'serif'],
-        display: ['"Clash Grotesk"', 'sans-serif'],
+        monumental: ['"Syne"', '"Cabinet Grotesk"', 'sans-serif'],
+        deco: ['"Syne"', '"Cabinet Grotesk"', 'sans-serif'],
+        display: ['"Cabinet Grotesk"', '"Clash Grotesk"', 'sans-serif'],
         serif: ['"Bodoni Moda"', 'serif'],
         sans: ['"Clash Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
