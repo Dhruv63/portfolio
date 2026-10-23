@@ -19,7 +19,7 @@ export default function App() {
 
       {/* 35mm Film Grain Noise Layer */}
       <div 
-        className="fixed inset-0 pointer-events-none z-10 noise-overlay opacity-50" 
+        className="fixed inset-0 pointer-events-none z-10 noise-overlay opacity-15" 
         aria-hidden="true"
       />
 

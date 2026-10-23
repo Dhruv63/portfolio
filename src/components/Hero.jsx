@@ -14,7 +14,7 @@ export default function Hero() {
     const v1 = videoRef1.current;
     if (!v0 || !v1) return;
 
-    v0.play().catch(() => {});
+    v0.play().catch(() => { });
 
     const crossfadeThreshold = 1.3; // Seconds before video ends to initiate dissolve
 
@@ -25,7 +25,7 @@ export default function Hero() {
           v1.currentTime = 0;
           v1.play().then(() => {
             setActiveVideo(1);
-          }).catch(() => {});
+          }).catch(() => { });
         }
       }
     };
@@ -37,7 +37,7 @@ export default function Hero() {
           v0.currentTime = 0;
           v0.play().then(() => {
             setActiveVideo(0);
-          }).catch(() => {});
+          }).catch(() => { });
         }
       }
     };
@@ -74,12 +74,12 @@ export default function Hero() {
   };
 
   return (
-    <section id="prologue" className="relative min-h-[96svh] flex flex-col justify-between pt-16 pb-14 px-6 overflow-hidden bg-[#040507]">
+    <section id="prologue" className="relative min-h-[96svh] flex flex-col justify-between overflow-hidden bg-[#040507]">
 
       {/* =========================================================================
           AUTHENTIC DARK DECO NOIR FOOTAGE / SEAMLESS DUAL CROSSFADE LOOP
           Dual-player dissolve eliminates the abrupt end-of-loop jump cut.
-          Watermark completely occluded via slight scale and bottom gradient scrim.
+          Watermark completely occluded via slight scale and bottom gradient.
           ========================================================================= */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
         {/* Player 0 */}
@@ -89,7 +89,7 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/assets/dark-deco-metropolis.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.78] contrast-[1.18] saturate-[0.95] transform scale-[1.06] origin-top transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.82] contrast-[1.15] saturate-[0.95] transform scale-[1.06] origin-top transition-opacity duration-1000 ease-in-out"
           style={{ opacity: activeVideo === 0 ? 1 : 0 }}
         >
           <source src="/assets/dark-deco-metropolis.mp4" type="video/mp4" />
@@ -102,7 +102,7 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/assets/dark-deco-metropolis.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.78] contrast-[1.18] saturate-[0.95] transform scale-[1.06] origin-top transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.82] contrast-[1.15] saturate-[0.95] transform scale-[1.06] origin-top transition-opacity duration-1000 ease-in-out"
           style={{ opacity: activeVideo === 1 ? 1 : 0 }}
         >
           <source src="/assets/dark-deco-metropolis.mp4" type="video/mp4" />
@@ -111,112 +111,155 @@ export default function Hero() {
         {/* Top Fade for seamless Navbar merge */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#040507] via-[#040507]/60 to-transparent" />
 
-        {/* Bottom Fade for seamless section transition & complete watermark occlusion */}
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#040507] via-[#040507]/85 to-transparent" />
+        {/* Bottom Fade: Gradual, cinematic darkening at base where typography & telemetry anchor */}
+        <div className="absolute inset-x-0 bottom-0 h-96 sm:h-[32rem] bg-gradient-to-t from-[#040507] via-[#040507]/90 to-transparent" />
 
-        {/* Subtle Reading Scrim - Only dims the center text zone, lets towers and searchlights shine on flanks */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(4,5,7,0.55)_0%,rgba(4,5,7,0.18)_55%,rgba(4,5,7,0.75)_100%)]" />
+        {/* Right-flank architectural wash for maximum telemetry ledger contrast */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 bg-gradient-to-l from-[#040507]/75 via-[#040507]/35 to-transparent pointer-events-none" />
       </div>
 
       {/* =========================================================================
-          MAIN MONUMENTAL STAGE
-          No eyebrows. No tiny icons or lines above the name. 
-          The name itself is the monument.
+          THE 1440PX ARCHITECTURAL BROAD SHEET STAGE (OPTION 1)
+          Upper field is completely un-occluded to showcase the gothic towers & searchlights.
+          Lower-third anchors the monumental plinth and unboxed telemetry ledger.
           ========================================================================= */}
-      <div className="relative z-10 max-w-4xl mx-auto w-full my-auto text-center space-y-7 py-6">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-8 lg:px-12 flex-1 flex flex-col justify-end pt-28 pb-8">
 
-        {/* Monumental Headline */}
-        <div className="space-y-4">
-          <h1 className="font-monumental text-6xl sm:text-8xl md:text-9xl font-normal text-white tracking-tight uppercase leading-[0.9]">
-            DHRUV SOLANKI
-          </h1>
-          <p className="font-serif italic text-xl sm:text-3xl md:text-4xl text-mineral-light font-light max-w-3xl mx-auto leading-tight">
-            Software architect &amp; founder operating from first principles.
-          </p>
-        </div>
+        {/* Lower-Third 12-Column Asymmetric Stage */}
+        <div className="pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
 
-        {/* Focused Narrative Statement */}
-        <p className="text-base sm:text-lg text-mineral-light max-w-2xl mx-auto leading-relaxed font-sans">
-          Founder of{' '}
-          <a
-            href="https://www.esgxpert.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-champagne font-medium underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition-colors"
-          >
-            ESG Tech Sol
-          </a>
-          , automating statutory SEBI BRSR environmental compliance. Co-founder of{' '}
-          <a
-            href="https://vapourbit.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-champagne font-medium underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition-colors"
-          >
-            VAPOURBIT
-          </a>
-          , architecting high-throughput cloud infrastructure, and co-author of autonomous AI triage research registered with the Government of India.
-        </p>
+            {/* Left Bay (Cols 1 to 7): Monumental Headline, Subtitle, Direct Action */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <div className="space-y-3">
+                <h1 className="font-monumental text-6xl sm:text-7xl md:text-8xl lg:text-[5.5rem] xl:text-[6.75rem] font-normal text-white tracking-tight uppercase leading-[0.88]">
+                  Dhruv<br />Solanki
+                </h1>
+                <p className="font-serif italic text-xl sm:text-2xl md:text-3xl text-[#EAE6DF] font-light max-w-xl leading-snug">
+                  Software architect &amp; founder operating from first principles.
+                </p>
+              </div>
 
-        {/* Restrained Architectural Action & Coordinates */}
-        <div className="pt-2 flex flex-col items-center gap-4">
-          {/* Single, Restrained Monolithic Action Button */}
-          <button
-            onClick={() => scrollTo('work')}
-            className="px-8 py-3.5 bg-white text-black font-sans text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#D4AF37] hover:text-black transition-colors active:scale-[0.98] cursor-pointer"
-            style={{
-              clipPath: 'polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)'
-            }}
-          >
-            Explore Productions
-          </button>
+              {/* Direct Architectural Action & Coordinates */}
+              <div className="pt-2 flex flex-wrap items-center gap-5 sm:gap-7">
+                <button
+                  onClick={() => scrollTo('work')}
+                  className="px-8 py-3.5 bg-[#EAE6DF] text-black font-sans text-xs uppercase tracking-[0.25em] font-semibold border border-white/30 hover:bg-white hover:text-black transition-all active:scale-[0.99] cursor-pointer"
+                >
+                  Explore Ventures
+                </button>
 
-          {/* Quiet Architectural Coordinates (No Floating Pill Boxes) */}
-          <div className="flex items-center gap-6 text-xs text-mineral-light/80 font-sans tracking-widest uppercase">
-            <a
-              href="https://github.com/Dhruv63"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => soundEngine.playClick(480)}
-              className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <span>GitHub</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-mineral-light/60 hover:text-white" />
-            </a>
-            <span className="text-white/20 select-none">•</span>
-            <a
-              href="https://www.linkedin.com/in/dhruv-solanki-4301a2327"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => soundEngine.playClick(480)}
-              className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <span>LinkedIn</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-mineral-light/60 hover:text-white" />
-            </a>
+                <div className="flex items-center gap-5 text-xs text-[#DCDFE8] font-sans tracking-widest uppercase">
+                  <a
+                    href="https://github.com/Dhruv63"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => soundEngine.playClick(480)}
+                    className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+                  >
+                    <span>GitHub</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#B8BDCC]" />
+                  </a>
+                  <span className="text-white/20 select-none">/</span>
+                  <a
+                    href="https://www.linkedin.com/in/dhruv-solanki-4301a2327"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => soundEngine.playClick(480)}
+                    className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+                  >
+                    <span>LinkedIn</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#B8BDCC]" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Bay (Cols 8 to 12): Unboxed Architectural Telemetry Ledger */}
+            <div className="lg:col-span-5 flex flex-col justify-end space-y-4 border-t lg:border-t-0 lg:border-l border-white/15 lg:pl-10 pt-6 lg:pt-0 text-left">
+              <div className="text-[10px] font-mono tracking-[0.3em] text-[#C5A880] uppercase pb-2 border-b border-white/10 flex items-center justify-between">
+                <span>Systems &amp; Deployments</span>
+                <span className="text-[#DCDFE8]/60">3 NODES</span>
+              </div>
+
+              {/* Node 1: ESG Tech Sol */}
+              <div className="border-b border-white/10 pb-3">
+                <div className="flex items-baseline justify-between gap-4">
+                  <a
+                    href="https://www.esgxpert.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-sm sm:text-base font-semibold text-white hover:text-[#C5A880] transition-colors inline-flex items-center gap-1.5 group"
+                  >
+                    <span>ESG Tech Sol</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#DCDFE8] group-hover:text-[#C5A880] transition-colors" />
+                  </a>
+                  <span className="text-[11px] font-mono text-[#C5A880] tracking-wider uppercase">Founder</span>
+                </div>
+                <p className="text-xs text-[#DCDFE8] mt-1.5 leading-relaxed">
+                  Automated greenhouse gas accounting and SEBI BRSR reporting software for enterprise compliance.
+                </p>
+              </div>
+
+              {/* Node 2: VAPOURBIT */}
+              <div className="border-b border-white/10 pb-3">
+                <div className="flex items-baseline justify-between gap-4">
+                  <a
+                    href="https://vapourbit.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-sm sm:text-base font-semibold text-white hover:text-[#C5A880] transition-colors inline-flex items-center gap-1.5 group"
+                  >
+                    <span>VAPOURBIT</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#DCDFE8] group-hover:text-[#C5A880] transition-colors" />
+                  </a>
+                  <span className="text-[11px] font-mono text-[#C5A880] tracking-wider uppercase">Co-Founder</span>
+                </div>
+                <p className="text-xs text-[#DCDFE8] mt-1.5 leading-relaxed">
+                  Cloud infrastructure and backend systems practice delivering containerized microservices and API gateways.
+                </p>
+              </div>
+
+              {/* Node 3: AutoTriage AI */}
+              <div className="pb-1">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="font-sans text-sm sm:text-base font-semibold text-white">
+                    AutoTriage AI
+                  </span>
+                  <span className="text-[11px] font-mono text-[#C5A880] tracking-wider uppercase">Co-Author</span>
+                </div>
+                <p className="text-xs text-[#DCDFE8] mt-1.5 leading-relaxed">
+                  Automated incident triage research combining lightweight vector search with deterministic heuristic routing (Govt. of India Copyright ROC SW-2026023768).
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
 
-      </div>
+        {/* Edge-to-Edge Baseline Hairline Datum & Descent Trigger */}
+        <div className="border-t border-white/15 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[10px] font-mono text-[#B8BDCC]/70 tracking-[0.25em] uppercase">
+          <div className="flex items-center gap-2">
+            <span className="text-white">ACT I</span>
+            <span className="text-white/20">/</span>
+            <span>PROLOGUE</span>
+          </div>
 
-      {/* =========================================================================
-          CHAPTER DESCENT MARKER
-          Restrained, clean, and architectural.
-          ========================================================================= */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-center justify-center text-center">
-        <button
-          onClick={() => scrollTo('work')}
-          className="group flex flex-col items-center gap-2 text-mineral-light/70 hover:text-white transition-colors cursor-pointer"
-        >
-          <span className="font-monumental text-xl text-white group-hover:text-champagne transition-colors">
-            I
-          </span>
-          <div className="w-[1px] h-6 bg-white/30 group-hover:bg-champagne transition-colors" />
-          <span className="text-xs uppercase tracking-[0.24em] font-sans">
-            Descent into the works
-          </span>
-          <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform text-mineral-light/60 group-hover:text-champagne" />
-        </button>
+          <button
+            onClick={() => scrollTo('work')}
+            className="group inline-flex items-center gap-2 text-[#DCDFE8] hover:text-white transition-colors cursor-pointer"
+          >
+            <span className="text-mineral-muted group-hover:text-[#C5A880] transition-colors">
+              SCROLL TO VENTURES
+            </span>
+            <span className="text-white/40 group-hover:text-white transition-transform group-hover:translate-y-0.5">↓</span>
+          </button>
+
+          <div className="hidden sm:block text-right text-[#B8BDCC]/50">
+            MUMBAI, INDIA
+          </div>
+        </div>
+
       </div>
 
     </section>

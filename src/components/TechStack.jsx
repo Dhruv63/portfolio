@@ -85,103 +85,110 @@ export default function TechStack() {
   ];
 
   return (
-    <section id="stack" className="relative py-20 px-6 bg-obsidian-dark border-t border-white/[0.04]">
-      <div className="max-w-6xl mx-auto space-y-20">
-        
-        {/* Act IV Header */}
-        <div data-reveal className="text-center space-y-4">
-          <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
-            THE ARSENAL.
-          </h2>
-          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto leading-relaxed">
+    <section id="stack" className="relative py-24 px-6 sm:px-10 lg:px-16 xl:px-20 bg-obsidian-dark border-t border-white/[0.08]">
+      <div className="max-w-[1440px] mx-auto space-y-16">
+
+        {/* Architectural Masthead — Left-Anchored, Full-Span */}
+        <div data-reveal className="border-b border-white/[0.08] pb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.28em] text-champagne">
+              <span>ACT IV</span>
+              <span className="text-white/20">—</span>
+              <span>SYSTEMS ARSENAL &amp; RUNTIMES</span>
+            </div>
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+              THE ARSENAL.
+            </h2>
+          </div>
+          <p className="font-serif italic text-lg sm:text-2xl text-mineral max-w-lg leading-snug md:text-right">
             Production-proven technologies, cloud infrastructure, and computational engines.
           </p>
         </div>
 
-        {/* Narrative Intro & Principles */}
-        <div data-reveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-5 space-y-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-champagne">
+        {/* Narrative Intro & Principles Colonnade (3-Column Structural Bays, Zero Boxes) */}
+        <div data-reveal className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start pb-16 border-b border-white/[0.08]">
+          <div className="lg:col-span-5 space-y-4 lg:pr-6 lg:border-r lg:border-white/[0.06]">
+            <span className="font-mono text-xs uppercase tracking-widest text-champagne block font-medium">
               // ARCHITECTURAL PHILOSOPHY
             </span>
-            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
+            <h3 className="font-monumental text-3xl sm:text-4xl text-white font-normal tracking-tight">
               Deterministic Foundations
             </h3>
-            <p className="text-base text-mineral-light font-sans leading-relaxed">
+            <p className="text-base text-[#DCDFE8] font-sans leading-relaxed">
               Every layer from statutory SEBI BRSR compliance to distributed microservice endpoints is engineered with immutable schema contracts, end-to-end type safety, and zero-compromise audit trails.
             </p>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
-              <span className="font-mono text-xs text-champagne block">01 / IMMUTABILITY</span>
-              <h4 className="font-sans font-semibold text-white text-sm">Strict Schemas</h4>
-              <p className="text-xs text-mineral font-sans leading-relaxed">
-                Guaranteed schema validation on all inputs and API payloads.
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
+            <div className="py-4 sm:py-0 sm:px-6 first:sm:pl-0 space-y-2">
+              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">01 / IMMUTABILITY</span>
+              <h4 className="font-sans font-semibold text-white text-base">Strict Schemas</h4>
+              <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
+                Guaranteed schema validation on all inputs, database states, and API payloads.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
-              <span className="font-mono text-xs text-champagne block">02 / LATENCY</span>
-              <h4 className="font-sans font-semibold text-white text-sm">Bounded SLAs</h4>
-              <p className="text-xs text-mineral font-sans leading-relaxed">
-                Sub-20ms median latency bounds across cloud network calls.
+            <div className="py-4 sm:py-0 sm:px-6 space-y-2">
+              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">02 / LATENCY</span>
+              <h4 className="font-sans font-semibold text-white text-base">Bounded SLAs</h4>
+              <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
+                Sub-20ms median latency bounds across cloud network calls and async workers.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-obsidian-surface border border-white/[0.04] space-y-2">
-              <span className="font-mono text-xs text-champagne block">03 / AUDITABILITY</span>
-              <h4 className="font-sans font-semibold text-white text-sm">Regulatory Proof</h4>
-              <p className="text-xs text-mineral font-sans leading-relaxed">
-                100% reproducible audit trails for compliance authorities.
+            <div className="py-4 sm:py-0 sm:px-6 last:sm:pr-0 space-y-2">
+              <span className="font-mono text-xs text-champagne block uppercase tracking-wider font-medium">03 / AUDITABILITY</span>
+              <h4 className="font-sans font-semibold text-white text-base">Regulatory Proof</h4>
+              <p className="text-xs text-[#CBD0DF] font-sans leading-relaxed">
+                100% reproducible audit trails engineered for statutory compliance authorities.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Systems Capability Matrix (Zero Pill Tags — Clean Typographic Ledger) */}
-        <div data-reveal className="space-y-6">
+        {/* Systems Capability Matrix — 4-Column Colonnade (Zero Cards) */}
+        <div data-reveal className="space-y-6 pb-16 border-b border-white/[0.08]">
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
-            <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted">
-              SYSTEMS CAPABILITY MATRIX // 04 PILLARS
+            <span className="font-mono text-xs uppercase tracking-widest text-white/80 font-medium">
+              SYSTEMS CAPABILITY MATRIX // 04 ARCHITECTURAL PILLARS
             </span>
-            <span className="font-mono text-xs text-mineral-muted hidden sm:inline">
+            <span className="font-mono text-xs text-champagne hidden sm:inline">
               STANDARDS: PRODUCTION DEPLOYED
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.08] border-b border-white/[0.08]">
             {pillars.map((pillar) => (
               <div
                 key={pillar.category}
                 onMouseEnter={() => soundEngine.playClick(320)}
-                className="p-8 rounded-2xl bg-obsidian-surface border border-white/[0.04] hover:border-white/[0.12] transition-colors flex flex-col justify-between space-y-6"
+                className="py-8 md:px-6 first:md:pl-0 last:md:pr-0 space-y-6 flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs tracking-widest text-inferno font-medium">
+                    <span className="font-mono text-xs tracking-widest text-inferno font-semibold uppercase">
                       [{pillar.index}] {pillar.category}
                     </span>
                   </div>
 
-                  <h4 className="font-monumental text-2xl text-white font-bold tracking-tight">
+                  <h4 className="font-monumental text-2xl text-white font-normal tracking-tight group-hover:text-champagne transition-colors">
                     {pillar.title}
                   </h4>
 
-                  <p className="text-sm text-mineral font-sans leading-relaxed">
+                  <p className="text-xs text-[#C6CAD6] font-sans leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
 
-                {/* Clean Editorial Typographic Rows */}
-                <div className="border-t border-white/[0.06] pt-4 space-y-2.5">
+                {/* Clean Tabular Rows (No Pills, Pure Editorial Alignment) */}
+                <div className="border-t border-white/[0.08] pt-4 space-y-2">
                   {pillar.technologies.map((tech) => (
-                    <div 
-                      key={tech.name} 
-                      className="flex items-center justify-between text-xs sm:text-sm font-sans gap-4 py-1 border-b border-white/[0.02] last:border-none"
+                    <div
+                      key={tech.name}
+                      className="flex items-center justify-between text-xs font-sans gap-2 py-1.5 border-b border-white/[0.04] last:border-none hover:bg-white/[0.03] transition-colors"
                     >
-                      <span className="font-medium text-white tracking-wide">
+                      <span className="font-medium text-white tracking-wide truncate">
                         {tech.name}
                       </span>
-                      <span className="text-mineral-muted text-right font-mono text-xs truncate max-w-[220px]">
+                      <span className="text-[#A2A7B8] text-right font-mono text-[11px] truncate shrink-0 max-w-[150px]">
                         {tech.role}
                       </span>
                     </div>
@@ -192,62 +199,52 @@ export default function TechStack() {
           </div>
         </div>
 
-        {/* Systems Production Ledger */}
+        {/* Audited Architectural Telemetry Ledger (Full-Span Table, Zero Cards) */}
         <div data-reveal className="space-y-6">
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
-            <span className="font-mono text-xs uppercase tracking-widest text-mineral-muted">
-              VERIFIED ARCHITECTURAL BENCHMARKS
+            <span className="font-mono text-xs uppercase tracking-widest text-white/80 font-medium">
+              VERIFIED ARCHITECTURAL BENCHMARKS // AUDITED TELEMETRY
             </span>
-            <span className="font-mono text-xs text-mineral-muted hidden sm:inline">
-              AUDITED TELEMETRY
+            <span className="font-mono text-xs text-champagne hidden sm:inline">
+              REAL-TIME PRODUCTION LIMITS
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.08] border-y border-white/[0.08]">
             {systems.map((sys) => (
-              <div 
-                key={sys.name} 
-                className="p-6 rounded-2xl bg-obsidian-surface border border-white/[0.04] space-y-4 flex flex-col justify-between"
+              <div
+                key={sys.name}
+                className="py-8 md:px-8 first:md:pl-0 last:md:pr-0 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10px] text-champagne tracking-wider uppercase">
+                    <span className="font-mono text-xs text-champagne tracking-wider uppercase font-medium">
                       {sys.code}
                     </span>
-                    <span className="font-mono text-[10px] text-mineral-muted uppercase">
+                    <span className="font-mono text-xs text-[#A2A7B8] uppercase">
                       {sys.latencyLabel}
                     </span>
                   </div>
 
-                  <h5 className="font-monumental text-xl font-bold text-white tracking-tight">
+                  <h5 className="font-monumental text-xl sm:text-2xl font-normal text-white tracking-tight">
                     {sys.name}
                   </h5>
 
-                  <p className="text-xs text-mineral-light font-sans leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#DCDFE8] font-sans leading-relaxed">
                     {sys.purpose}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/[0.04] flex items-baseline justify-between">
-                  <span className="font-monumental text-2xl font-bold text-inferno">
+                <div className="pt-4 border-t border-white/[0.06] flex items-baseline justify-between">
+                  <span className="font-monumental text-3xl font-normal text-inferno">
                     {sys.latency}
                   </span>
-                  <span className="text-[11px] text-mineral font-mono">
+                  <span className="text-xs text-mineral-light font-mono">
                     Deterministic SLA
                   </span>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Chapter 4 Numeral */}
-        <div data-reveal className="text-center pt-8">
-          <div className="inline-flex flex-col items-center gap-2">
-            <span className="font-monumental text-2xl font-bold text-white">
-              4
-            </span>
-            <div className="w-[1px] h-8 bg-white/20"></div>
           </div>
         </div>
 

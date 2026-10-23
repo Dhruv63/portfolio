@@ -113,9 +113,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-obsidian-dark/95 backdrop-blur-md border-b border-white/[0.04]">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        
+
         {/* Left: Brand Monogram */}
-        <a 
+        <a
           href="#prologue"
           onClick={() => soundEngine.playClick(600)}
           className="group flex items-center gap-3 shrink-0"
@@ -137,11 +137,10 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={() => soundEngine.playClick(540)}
-                className={`relative flex items-center gap-1.5 py-1 transition-all ${
-                  isActive
+                className={`relative flex items-center gap-1.5 py-1 transition-all ${isActive
                     ? 'text-white font-medium'
                     : 'text-mineral hover:text-white'
-                }`}
+                  }`}
               >
                 {isActive && (
                   <span className="w-1.5 h-1.5 rounded-full bg-champagne animate-pulse" aria-hidden="true" />
@@ -158,39 +157,38 @@ export default function Navbar() {
             soundEngine.playClick(450);
             setMobileMenuOpen(!mobileMenuOpen);
           }}
-          className="md:hidden flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-white"
+          className="md:hidden flex items-center gap-1.5 px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[11px] font-mono text-white shrink min-w-0 max-w-[120px]"
           aria-label="Toggle mobile chapters menu"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-inferno animate-pulse" />
-          <span className="truncate max-w-[100px]">{currentActiveLink.label}</span>
-          <ChevronDown className={`w-3 h-3 text-mineral transition-transform ${mobileMenuOpen ? 'rotate-180' : ''}`} />
+          <span className="w-1.5 h-1.5 rounded-full bg-inferno animate-pulse shrink-0" />
+          <span className="truncate">{currentActiveLink.label}</span>
+          <ChevronDown className={`w-3 h-3 text-mineral transition-transform shrink-0 ${mobileMenuOpen ? 'rotate-180' : ''}`} />
         </button>
 
         {/* Right: Sound Toggle, Keyboard Hints & Live Telemetry */}
-        <div className="flex items-center gap-2 sm:gap-3 text-sm font-sans text-mineral shrink-0">
-          
+        <div className="flex items-center gap-1.5 sm:gap-3 text-sm font-sans text-mineral shrink-0">
+
           <button
             onClick={handleSoundToggle}
             style={
               soundEnabled
                 ? {
-                    background: 'linear-gradient(135deg, #C5A059 0%, #E2BF7D 100%)',
-                    color: '#040507',
-                    boxShadow: '0 0 20px rgba(197, 160, 89, 0.45)',
-                  }
+                  background: 'linear-gradient(135deg, #C5A059 0%, #E2BF7D 100%)',
+                  color: '#040507',
+                  boxShadow: '0 0 20px rgba(197, 160, 89, 0.45)',
+                }
                 : undefined
             }
-            className={`deco-chamfer-sm flex items-center gap-2 px-3.5 py-1.5 text-xs transition-all duration-300 cursor-pointer ${
-              soundEnabled
+            className={`deco-chamfer-sm flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 text-xs transition-all duration-300 cursor-pointer ${soundEnabled
                 ? 'font-bold'
                 : 'bg-obsidian-surface hover:bg-obsidian-elevated text-mineral-light hover:text-white border border-white/10 hover:border-brass-aged/40'
-            }`}
+              }`}
             title="Toggle soundtrack: Spill Your Time (Live) (Hotkey: M)"
             aria-pressed={soundEnabled}
           >
             {soundEnabled ? (
               <>
-                <Volume2 className="w-3.5 h-3.5 text-black" />
+                <Volume2 className="w-3.5 h-3.5 text-black shrink-0" />
                 {/* 3-Bar Equalizer Wave Micro-animation */}
                 <div className="flex items-end gap-[2px] h-3 px-0.5" aria-hidden="true">
                   <span className="w-[2px] bg-black rounded-sm animate-eq-1 inline-block" />
@@ -201,21 +199,22 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <VolumeX className="w-3.5 h-3.5 text-mineral-light" />
+                <VolumeX className="w-3.5 h-3.5 text-mineral-light shrink-0" />
                 <span className="hidden sm:inline font-sans">Sound</span>
               </>
             )}
-            <kbd className={`hidden lg:inline-flex text-[9px] font-mono px-1 rounded-sm ml-0.5 ${
-              soundEnabled ? 'bg-black/20 text-black border border-black/20' : 'bg-black/40 text-white/70 border border-white/10'
-            }`}>
+            <kbd className={`hidden lg:inline-flex text-[9px] font-mono px-1 rounded-sm ml-0.5 ${soundEnabled ? 'bg-black/20 text-black border border-black/20' : 'bg-black/40 text-white/70 border border-white/10'
+              }`}>
               M
             </kbd>
           </button>
 
-          <div className="deco-chamfer-sm flex items-center gap-2 bg-obsidian-surface px-2.5 sm:px-3 py-1.5 border border-white/[0.06]">
-            <span className="inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500 animate-pulse" />
-            <span className="text-[11px] sm:text-xs text-mineral-light tracking-tight font-mono">
-              <span className="hidden sm:inline">Mumbai </span>{time || '18:00:00'} IST
+          <div className="deco-chamfer-sm flex items-center gap-1.5 sm:gap-2 bg-obsidian-surface px-2 sm:px-3 py-1.5 border border-white/[0.06]">
+            <span className="inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500 animate-pulse shrink-0" />
+            <span className="text-[10px] sm:text-xs text-mineral-light tracking-tight font-mono whitespace-nowrap">
+              <span className="hidden sm:inline">Mumbai </span>
+              <span className="sm:hidden">{time ? time.split(':').slice(0, 2).join(':') : '18:00'} IST</span>
+              <span className="hidden sm:inline">{time || '18:00:00'} IST</span>
             </span>
           </div>
 
@@ -225,7 +224,13 @@ export default function Navbar() {
 
       {/* Mobile Chapter Drawer / Popdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-obsidian-elevated/98 backdrop-blur-xl border-b border-white/[0.08] px-6 py-4 space-y-2">
+        <>
+          <div 
+            className="fixed inset-0 top-[65px] bg-black/60 backdrop-blur-sm z-[-1] md:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="md:hidden bg-obsidian-elevated/98 backdrop-blur-xl border-b border-white/[0.08] px-6 py-4 space-y-2">
           <div className="font-mono text-[10px] uppercase text-mineral-muted tracking-wider pb-1">
             JUMP TO CHAPTER
           </div>
@@ -240,11 +245,10 @@ export default function Navbar() {
                     soundEngine.playClick(500);
                     setMobileMenuOpen(false);
                   }}
-                  className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
-                    isActive 
-                      ? 'bg-white/[0.08] text-white font-medium' 
+                  className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${isActive
+                      ? 'bg-white/[0.08] text-white font-medium'
                       : 'text-mineral-light hover:bg-white/[0.03] hover:text-white'
-                  }`}
+                    }`}
                 >
                   <span>{link.label}</span>
                   {isActive && <span className="text-xs font-mono text-inferno">ACTIVE</span>}
@@ -253,11 +257,12 @@ export default function Navbar() {
             })}
           </div>
         </div>
-      )}
+      </>
+    )}
 
       {/* Chapter Reading Progress Bar */}
       <div className="absolute bottom-0 left-0 h-[2px] bg-white/[0.04] w-full overflow-hidden" aria-hidden="true">
-        <div 
+        <div
           className="h-full bg-gradient-to-r from-inferno via-champagne to-emerald-400 transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />

@@ -7,38 +7,38 @@ export default function Ventures() {
     {
       id: "esgxpert",
       index: "01",
-      category: "STATUTORY COMPLIANCE SAAS",
+      category: "ENTERPRISE CLIMATE SAAS",
       title: "ESGXpert Platform",
       tagline: "Automated Greenhouse Gas (GHG) Accounting & SEBI BRSR Core Regulatory Engine.",
-      desc: "Enterprise compliance SaaS engineered for Indian corporations facing statutory SEBI BRSR mandates. Ingests raw utility, industrial telemetry, and stationary fuel logs; deterministically calculates Scope 1, 2, and 3 emissions against CEA and GHG Protocol emission factor baselines; and generates legally verifiable, audit-proof filings ready for statutory auditor sign-off.",
+      desc: "Enterprise compliance platform engineered for Indian corporations reporting under SEBI BRSR Core guidelines. Ingests utility consumption, stationary fuel logs, and supply chain telemetry to calculate Scope 1, 2, and 3 emissions against CEA and GHG Protocol baselines, generating auditor-ready compliance reports.",
       url: "https://www.esgxpert.com",
       urlDisplay: "esgxpert.com",
       specs: [
         { label: "REGULATORY STANDARD", value: "SEBI BRSR Core & ISO 14001" },
         { label: "FACTOR BASELINES", value: "CEA v19 & GHG Protocol Corporate Standard" },
-        { label: "AUDIT LATENCY", value: "< 45ms deterministic report compilation" },
+        { label: "REPORT GENERATION", value: "< 45ms automated report compilation" },
         { label: "CORE ARCHITECTURE", value: "Next.js, TypeScript, PostgreSQL, Docker, Node.js" },
         { label: "DEPLOYMENT LIFECYCLE", value: "Active Enterprise Production (2024—Present)" },
       ],
       metrics: [
-        { label: "Scope 1 & 2 Math", val: "Deterministic", sub: "Zero-drift algorithm" },
-        { label: "Audit Readiness", val: "100%", sub: "Verifiable ledger" },
-        { label: "Compliance Focus", val: "SEBI Core", sub: "Statutory India" },
+        { label: "Emissions Math", val: "Automated", sub: "Scope 1, 2 & 3" },
+        { label: "Audit Readiness", val: "100%", sub: "Verifiable reports" },
+        { label: "Regulatory Focus", val: "SEBI Core", sub: "Indian mandates" },
       ],
     },
     {
       id: "vapourbit",
       index: "02",
-      category: "DISTRIBUTED SYSTEMS STUDIO",
+      category: "DISTRIBUTED SYSTEMS PRACTICE",
       title: "VAPOURBIT Systems",
       tagline: "Cloud Infrastructure, Distributed Microservices & High-Throughput APIs.",
-      desc: "Cloud architecture and backend systems studio delivering high-throughput containerized microservices, asynchronous worker queues, and enterprise AI workflow integrations. Architected to maintain strict sub-20ms latency bounds under high concurrency with multi-AZ failover and immutable configuration pipelines.",
+      desc: "Cloud architecture and backend systems practice delivering high-throughput containerized microservices, asynchronous worker queues, and resilient API architectures. Designed to maintain sub-20ms latency bounds with multi-AZ failover and automated deployment pipelines.",
       url: "https://vapourbit.com",
       urlDisplay: "vapourbit.com",
       specs: [
         { label: "ORCHESTRATION", value: "Docker Containers on AWS EC2 & S3" },
         { label: "COMMUNICATION PROTOCOL", value: "gRPC & High-Throughput RESTful Gateways" },
-        { label: "LATENCY GUARANTEE", value: "< 18ms p99 SLA across distributed nodes" },
+        { label: "LATENCY TARGET", value: "< 18ms p99 SLA across distributed nodes" },
         { label: "CACHE & QUEUE LAYER", value: "Redis In-Memory Engine & BullMQ async workers" },
         { label: "AVAILABILITY TARGET", value: "99.98% uptime SLA in multi-AZ VPC" },
       ],
@@ -51,161 +51,184 @@ export default function Ventures() {
     {
       id: "hyuzz",
       index: "03",
-      category: "CREATIVE COMPUTING ENGINE",
+      category: "FRONTEND COMPUTING UTILITY",
       title: "Hyuzz Color Engine",
-      tagline: "Canvas Sub-Pixel Color Sampling & Deterministic Chromatic Algorithms.",
-      desc: "Lightweight browser utility for digital artists and design systems engineers. Utilizes raw HTML5 Canvas memory buffers for sub-pixel chromatic sampling, real-time hexadecimal color search, and algorithmic color-harmony calculations with zero external client-side runtime dependencies.",
+      tagline: "Client-Side Canvas Color Extraction & Harmonization Utility.",
+      desc: "Zero-dependency browser tool for designers and developers. Reads canvas pixel buffers directly for instant color sampling, palette extraction, and color harmony calculations with a sub-12kb bundle size.",
       url: "https://hyuzz.vercel.app/app",
       urlDisplay: "hyuzz.vercel.app",
       specs: [
         { label: "CORE RUNTIME", value: "HTML5 Canvas API, React 18, Vite" },
-        { label: "COMPUTATIONAL MODEL", value: "Algorithmic HSL/RGB conversion matrix" },
-        { label: "SAMPLING LATENCY", value: "Sub-millisecond memory buffer read" },
+        { label: "COLOR MODEL", value: "Direct Canvas 2D ImageData & HSL/RGB conversion" },
+        { label: "SAMPLING LATENCY", value: "< 1ms direct pixel buffer read" },
         { label: "BUNDLE OVERHEAD", value: "Zero external dependencies (<12kb gzipped)" },
         { label: "RELEASE CYCLE", value: "Production Public Utility (2025)" },
       ],
       metrics: [
         { label: "Buffer Sampling", val: "< 1ms", sub: "Direct canvas memory" },
         { label: "Bundle Overhead", val: "< 12kb", sub: "Zero dependencies" },
-        { label: "Color Space", val: "HSL / RGB", sub: "Harmonic calculus" },
+        { label: "Color Models", val: "HSL & RGB", sub: "Palette harmony" },
       ],
     },
   ];
 
   return (
-    <section id="work" className="relative py-20 px-6 bg-obsidian-dark border-t border-white/[0.04]">
-      <div className="max-w-6xl mx-auto space-y-20">
+    <section id="work" className="relative py-24 px-6 sm:px-10 lg:px-16 xl:px-20 bg-obsidian-dark border-t border-white/[0.08]">
+      <div className="max-w-[1440px] mx-auto space-y-16">
 
-        {/* Act II Title Block */}
-        <div data-reveal className="text-center space-y-4">
-          <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
-            THE PRODUCTIONS.
-          </h2>
-          <p className="font-serif italic text-2xl sm:text-3xl text-mineral max-w-2xl mx-auto leading-relaxed">
-            Architected enterprise compliance engines, cloud systems, and creative tooling.
+        {/* Architectural Masthead — Left-Anchored, Full-Span */}
+        <div data-reveal className="border-b border-white/[0.08] pb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.28em] text-champagne">
+              <span>ACT II</span>
+              <span className="text-white/20">—</span>
+              <span>VENTURES &amp; SYSTEMS</span>
+            </div>
+            <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase leading-[0.88]">
+              THE VENTURES.
+            </h2>
+          </div>
+          <p className="font-serif italic text-lg sm:text-2xl text-mineral max-w-lg leading-snug md:text-right">
+            Compliance platforms, cloud backends, and creative utilities.
           </p>
         </div>
 
-        {/* Productions Spread */}
-        <div className="space-y-16">
+        {/* Productions Broadsheet (Zero Cards, Edge-to-Edge Architectural Bays) */}
+        <div className="space-y-0">
           {productions.map((item, idx) => (
             <React.Fragment key={item.id}>
               <article
                 data-reveal
-                className="p-8 sm:p-12 rounded-2xl bg-obsidian-surface border border-white/[0.06] hover:border-white/[0.12] transition-colors space-y-8"
+                className="py-16 border-b border-white/[0.08] transition-colors group"
               >
-                {/* Header Row */}
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-white/[0.06] pb-6">
-                  <div className="space-y-1.5">
-                    <span className="font-mono text-xs tracking-widest text-inferno font-medium uppercase">
-                      [{item.index}] {item.category}
-                    </span>
-                    <h3 className="font-monumental text-3xl sm:text-4xl text-white font-bold tracking-tight">
-                      {item.title}
-                    </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start">
+
+                  {/* Left Structural Colonnade (Cols 1–4) */}
+                  <div className="lg:col-span-4 space-y-8 lg:pr-6 lg:border-r lg:border-white/[0.06]">
+
+                    {/* Index & Category Stamp */}
+                    {/* Index & Category Stamp */}
+                    <div className="space-y-2">
+                      <div className="flex items-baseline justify-between">
+                        <span className="font-monumental text-6xl sm:text-7xl font-normal text-white group-hover:text-champagne transition-colors leading-none">
+                          {item.index}
+                        </span>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => soundEngine.playClick(620)}
+                          className="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-champagne transition-colors"
+                        >
+                          <span className="underline underline-offset-4 decoration-white/40 hover:decoration-champagne">
+                            {item.urlDisplay}
+                          </span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-champagne transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </a>
+                      </div>
+                      <span className="font-mono text-xs tracking-widest text-inferno font-semibold uppercase block">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    {/* Unboxed Vertical Metric Ledger */}
+                    <div className="pt-6 border-t border-white/[0.12] space-y-4">
+                      <span className="font-mono text-[11px] tracking-widest text-champagne uppercase block font-medium">
+                        // CORE GUARANTEES
+                      </span>
+                      <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
+                        {item.metrics.map((m) => (
+                          <div key={m.label} className="space-y-0.5">
+                            <span className="font-mono text-[11px] text-[#A6ACBE] uppercase tracking-wider block">
+                              {m.label}
+                            </span>
+                            <span className="font-monumental text-2xl text-white font-normal block tracking-tight">
+                              {m.val}
+                            </span>
+                            <span className="text-xs text-mineral-light font-sans block">
+                              {m.sub}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
                   </div>
 
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => soundEngine.playClick(620)}
-                    className="group inline-flex items-center gap-2 text-sm font-sans font-medium text-mineral-light hover:text-white transition-colors"
-                  >
-                    <span className="font-mono text-xs text-mineral group-hover:text-champagne transition-colors">
-                      {item.urlDisplay}
-                    </span>
-                    <span className="border-b border-white/20 group-hover:border-white transition-colors">
-                      Explore Production
-                    </span>
-                    <ArrowUpRight className="w-4 h-4 text-mineral group-hover:text-champagne transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                </div>
+                  {/* Right System Bay (Cols 5–12) */}
+                  <div className="lg:col-span-8 space-y-8">
 
-                {/* Narrative Description & High-Level Statement */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  <div className="lg:col-span-7 space-y-4">
-                    <p className="text-base sm:text-lg text-white font-serif italic leading-relaxed">
-                      "{item.tagline}"
-                    </p>
-                    <p className="text-base text-mineral-light font-sans leading-relaxed">
+                    {/* Title & Tagline */}
+                    <div className="space-y-3">
+                      <h3 className="font-monumental text-3xl sm:text-5xl text-white font-normal tracking-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-xl sm:text-2xl text-white/90 font-serif italic leading-relaxed">
+                        "{item.tagline}"
+                      </p>
+                    </div>
+
+                    {/* Deep Engineering Narrative */}
+                    <p className="text-base sm:text-lg text-[#DCDFE8] font-sans leading-relaxed max-w-3xl">
                       {item.desc}
                     </p>
-                  </div>
 
-                  {/* High-Level Architectural Guarantees */}
-                  <div className="lg:col-span-5 grid grid-cols-3 gap-3">
-                    {item.metrics.map((m) => (
-                      <div key={m.label} className="p-4 rounded-xl bg-obsidian-dark border border-white/[0.03] space-y-1">
-                        <span className="font-mono text-[10px] text-mineral uppercase block truncate">
-                          {m.label}
-                        </span>
-                        <span className="font-monumental text-xl sm:text-2xl text-white font-bold block">
-                          {m.val}
-                        </span>
-                        <span className="text-[11px] text-mineral-muted font-sans block truncate">
-                          {m.sub}
-                        </span>
+                    {/* Full-Width Engineering Specification Ledger (High Contrast Tabular Architecture) */}
+                    <div className="pt-6 border-t border-white/[0.12] space-y-4">
+                      <div className="flex items-center justify-between text-xs font-mono tracking-widest text-mineral-light uppercase">
+                        <span className="text-white font-medium">SYSTEM SPECIFICATIONS &amp; STATUTORY LEDGER</span>
+                        <span className="text-white/30 select-none">•</span>
+                        <span className="text-champagne">DETERMINISTIC COMPILATION</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Systems Specification Ledger (Zero Toy Sliders — Pure Architectural Precision) */}
-                <div className="pt-4 border-t border-white/[0.04] space-y-3">
-                  <span className="font-mono text-[11px] tracking-wider text-mineral-muted uppercase block">
-                    ENGINEERING &amp; STATUTORY SPECIFICATIONS
-                  </span>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                    {item.specs.map((spec) => (
-                      <div
-                        key={spec.label}
-                        className="flex items-baseline justify-between gap-4 py-1.5 border-b border-white/[0.02] text-xs sm:text-sm font-sans"
-                      >
-                        <span className="font-mono text-xs text-mineral shrink-0">
-                          {spec.label}:
-                        </span>
-                        <span className="font-medium text-white text-right truncate">
-                          {spec.value}
-                        </span>
+                      <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
+                        {item.specs.map((spec) => (
+                          <div
+                            key={spec.label}
+                            className="grid grid-cols-1 sm:grid-cols-12 py-3.5 gap-2 text-xs sm:text-sm font-sans items-baseline hover:bg-white/[0.03] transition-colors"
+                          >
+                            <span className="sm:col-span-5 font-mono text-xs text-[#B8BDCC] shrink-0 uppercase tracking-wider font-medium">
+                              {spec.label}
+                            </span>
+                            <span className="sm:col-span-7 font-medium text-white text-left sm:text-right font-sans">
+                              {spec.value}
+                            </span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+
                   </div>
+
                 </div>
               </article>
 
-              {/* Interleaved Archival Skyline at Act Midpoint */}
+              {/* Interleaved Archival Aperture at Act Midpoint */}
               {idx === 0 && (
-                <div data-reveal className="relative rounded-2xl overflow-hidden h-72 sm:h-96 w-full border border-white/[0.04]">
-                  <img
-                    src="/assets/mumbai-india-mumbai-bombay-skyline-with-high.jpg"
-                    alt="Mumbai commercial financial center and technology corridor"
-                    width="1920"
-                    height="1280"
-                    className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 motion-drift"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-obsidian-dark/90 flex items-end p-8 border-t border-white/[0.04]">
-                    <p className="text-sm sm:text-base text-mineral-light font-sans max-w-xl">
-                      Operating from Mumbai, India — architecting statutory systems and cloud infrastructures for enterprise regulatory compliance.
-                    </p>
+                <div data-reveal className="py-12 border-b border-white/[0.08]">
+                  <div className="relative overflow-hidden h-72 sm:h-96 w-full border border-white/[0.12]">
+                    <img
+                      src="/assets/mumbai-india-mumbai-bombay-skyline-with-high.jpg"
+                      alt="Mumbai commercial financial center and technology corridor"
+                      width="1920"
+                      height="1280"
+                      className="w-full h-full object-cover filter contrast-[1.05] brightness-100 motion-drift"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-[#07090D]/90 backdrop-blur-sm flex items-center justify-between p-6 sm:p-8 border-t border-white/[0.12]">
+                      <p className="text-xs sm:text-sm text-white font-sans max-w-2xl font-medium">
+                        Operating from Mumbai, India — architecting statutory systems and cloud infrastructures for enterprise regulatory compliance.
+                      </p>
+                      <span className="hidden sm:block font-mono text-xs text-champagne tracking-widest uppercase">
+                        COORDINATES: 18.9220° N, 72.8347° E
+                      </span>
+                    </div>
                   </div>
                 </div>
               )}
             </React.Fragment>
           ))}
-        </div>
-
-        {/* Chapter 2 Numeral */}
-        <div data-reveal className="text-center pt-8">
-          <div className="inline-flex flex-col items-center gap-2">
-            <span className="font-monumental text-2xl font-bold text-white">
-              2
-            </span>
-            <div className="w-[1px] h-8 bg-white/20"></div>
-          </div>
         </div>
 
       </div>
