@@ -1,68 +1,104 @@
-// Web Audio API Procedural Cinematic Atmosphere & Interactive Sound FX
-// Zero external files, 100% reliable, respects browser autoplay constraints
+// Web Audio API & HTML5 Audio Cinematic Soundtrack & Interactive Sound FX
+// Features 'Spill Your Time (Live)' with smooth gain ramping and mechanical interaction clicks
 
 class SoundEngine {
   constructor() {
     this.ctx = null;
-    this.droneGain = null;
-    this.osc1 = null;
-    this.osc2 = null;
-    this.filter = null;
+    this.audio = null;
+    this.trackSource = null;
+    this.trackGain = null;
     this.isMuted = true;
+    this.isInitialized = false;
+    this.trackPath = '/audio/spill-your-time.mp3';
+    this.targetVolume = 0.15; // Subtle, atmospheric ambient background level
+  }
+
+  setVolume(volume) {
+    this.targetVolume = Math.max(0, Math.min(1, volume));
+    if (!this.isMuted) {
+      if (this.ctx && this.trackGain) {
+        this.trackGain.gain.setTargetAtTime(this.targetVolume, this.ctx.currentTime, 0.2);
+      } else if (this.audio) {
+        this.audio.volume = this.targetVolume;
+      }
+    }
   }
 
   init() {
-    if (this.ctx) return;
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContext) return;
-    this.ctx = new AudioContext();
+    if (this.isInitialized) return;
 
-    // Low-pass filter for warm cinematic tone
-    this.filter = this.ctx.createBiquadFilter();
-    this.filter.type = 'lowpass';
-    this.filter.frequency.setValueAtTime(140, this.ctx.currentTime);
+    try {
+      // Initialize HTML5 Audio element for the soundtrack
+      this.audio = new Audio(this.trackPath);
+      this.audio.loop = true;
+      this.audio.preload = 'auto';
 
-    // Master drone gain
-    this.droneGain = this.ctx.createGain();
-    this.droneGain.gain.setValueAtTime(0, this.ctx.currentTime);
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) {
+        this.ctx = new AudioContext();
+        this.trackGain = this.ctx.createGain();
+        this.trackGain.gain.setValueAtTime(0, this.ctx.currentTime);
 
-    // Connect to speakers
-    this.filter.connect(this.droneGain);
-    this.droneGain.connect(this.ctx.destination);
+        this.trackSource = this.ctx.createMediaElementSource(this.audio);
+        this.trackSource.connect(this.trackGain);
+        this.trackGain.connect(this.ctx.destination);
+      } else {
+        this.audio.volume = 0;
+      }
 
-    // Low fundamental drone oscillator (55Hz - A1)
-    this.osc1 = this.ctx.createOscillator();
-    this.osc1.type = 'sine';
-    this.osc1.frequency.setValueAtTime(55, this.ctx.currentTime);
-    this.osc1.connect(this.filter);
-    this.osc1.start();
-
-    // Subtle sub-harmonic warmth (82.4Hz - E2)
-    this.osc2 = this.ctx.createOscillator();
-    this.osc2.type = 'triangle';
-    this.osc2.frequency.setValueAtTime(82.4, this.ctx.currentTime);
-    const osc2Gain = this.ctx.createGain();
-    osc2Gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
-    this.osc2.connect(osc2Gain);
-    osc2Gain.connect(this.filter);
-    this.osc2.start();
+      this.isInitialized = true;
+    } catch (e) {
+      console.warn('SoundEngine initialization note:', e);
+      // Fallback direct audio object
+      if (!this.audio) {
+        this.audio = new Audio(this.trackPath);
+        this.audio.loop = true;
+      }
+      this.isInitialized = true;
+    }
   }
 
   toggle() {
     this.init();
-    if (!this.ctx) return false;
 
-    if (this.ctx.state === 'suspended') {
+    if (this.ctx && this.ctx.state === 'suspended') {
       this.ctx.resume();
     }
 
     this.isMuted = !this.isMuted;
 
     if (this.isMuted) {
-      this.droneGain.gain.setTargetAtTime(0, this.ctx.currentTime, 0.3);
+      // Smooth fade-out over 400ms
+      if (this.ctx && this.trackGain) {
+        this.trackGain.gain.setTargetAtTime(0, this.ctx.currentTime, 0.15);
+        setTimeout(() => {
+          if (this.isMuted && this.audio) {
+            this.audio.pause();
+          }
+        }, 500);
+      } else if (this.audio) {
+        this.audio.pause();
+      }
     } else {
-      this.droneGain.gain.setTargetAtTime(0.06, this.ctx.currentTime, 1.2);
-      this.playClick(440, 0.05);
+      // Smooth fade-in up to subtle ambient target volume
+      if (this.audio) {
+        const playPromise = this.audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              if (this.ctx && this.trackGain) {
+                this.trackGain.gain.setValueAtTime(0.01, this.ctx.currentTime);
+                this.trackGain.gain.setTargetAtTime(this.targetVolume, this.ctx.currentTime, 0.4);
+              } else {
+                this.audio.volume = this.targetVolume;
+              }
+            })
+            .catch((err) => {
+              console.warn('Audio play deferred until user interaction:', err);
+            });
+        }
+      }
+      this.playClick(440, 0.04);
     }
 
     return !this.isMuted;
@@ -86,7 +122,7 @@ class SoundEngine {
       clickOsc.start();
       clickOsc.stop(this.ctx.currentTime + duration);
     } catch {
-      // Audio context may be closed or suspended
+      // Audio context state safely ignored
     }
   }
 }

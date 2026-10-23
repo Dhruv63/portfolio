@@ -123,7 +123,7 @@ export default function Navbar() {
           <span className="font-monumental text-lg sm:text-xl font-bold text-white group-hover:text-champagne transition-colors">
             DHRUV SOLANKI
           </span>
-          <span className="hidden xl:inline-block text-xs text-mineral-muted px-2.5 py-0.5 bg-white/[0.04] rounded tracking-wide font-mono">
+          <span className="hidden xl:inline-block text-[10px] text-brass-aged px-2 py-0.5 border border-brass-aged/30 deco-chamfer-sm uppercase tracking-widest font-mono">
             ARCHITECT
           </span>
         </a>
@@ -171,37 +171,48 @@ export default function Navbar() {
           
           <button
             onClick={handleSoundToggle}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+            style={
               soundEnabled
-                ? 'bg-inferno text-white'
-                : 'bg-white/[0.04] text-mineral hover:text-white'
+                ? {
+                    background: 'linear-gradient(135deg, #C5A059 0%, #E2BF7D 100%)',
+                    color: '#040507',
+                    boxShadow: '0 0 20px rgba(197, 160, 89, 0.45)',
+                  }
+                : undefined
+            }
+            className={`deco-chamfer-sm flex items-center gap-2 px-3.5 py-1.5 text-xs transition-all duration-300 cursor-pointer ${
+              soundEnabled
+                ? 'font-bold'
+                : 'bg-obsidian-surface hover:bg-obsidian-elevated text-mineral-light hover:text-white border border-white/10 hover:border-brass-aged/40'
             }`}
-            title="Toggle procedural ambient sound (Hotkey: M)"
+            title="Toggle soundtrack: Spill Your Time (Live) (Hotkey: M)"
             aria-pressed={soundEnabled}
           >
             {soundEnabled ? (
               <>
-                <Volume2 className="w-3.5 h-3.5 text-white" />
+                <Volume2 className="w-3.5 h-3.5 text-black" />
                 {/* 3-Bar Equalizer Wave Micro-animation */}
                 <div className="flex items-end gap-[2px] h-3 px-0.5" aria-hidden="true">
-                  <span className="w-[2px] bg-white rounded-full animate-eq-1 inline-block" />
-                  <span className="w-[2px] bg-white rounded-full animate-eq-2 inline-block" />
-                  <span className="w-[2px] bg-white rounded-full animate-eq-3 inline-block" />
+                  <span className="w-[2px] bg-black rounded-sm animate-eq-1 inline-block" />
+                  <span className="w-[2px] bg-black rounded-sm animate-eq-2 inline-block" />
+                  <span className="w-[2px] bg-black rounded-sm animate-eq-3 inline-block" />
                 </div>
-                <span className="hidden sm:inline">Sound on</span>
+                <span className="hidden sm:inline font-mono tracking-tight text-[11px]">Spill Your Time</span>
               </>
             ) : (
               <>
-                <VolumeX className="w-3.5 h-3.5 text-mineral" />
-                <span className="hidden sm:inline">Sound</span>
+                <VolumeX className="w-3.5 h-3.5 text-mineral-light" />
+                <span className="hidden sm:inline font-sans">Sound</span>
               </>
             )}
-            <kbd className="hidden lg:inline-flex text-[9px] font-mono px-1 rounded bg-black/30 text-white/70 border border-white/10 ml-0.5">
+            <kbd className={`hidden lg:inline-flex text-[9px] font-mono px-1 rounded-sm ml-0.5 ${
+              soundEnabled ? 'bg-black/20 text-black border border-black/20' : 'bg-black/40 text-white/70 border border-white/10'
+            }`}>
               M
             </kbd>
           </button>
 
-          <div className="flex items-center gap-2 bg-obsidian-surface px-2.5 sm:px-3 py-1.5 rounded-full border border-white/[0.04]">
+          <div className="deco-chamfer-sm flex items-center gap-2 bg-obsidian-surface px-2.5 sm:px-3 py-1.5 border border-white/[0.06]">
             <span className="inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500 animate-pulse" />
             <span className="text-[11px] sm:text-xs text-mineral-light tracking-tight font-mono">
               <span className="hidden sm:inline">Mumbai </span>{time || '18:00:00'} IST

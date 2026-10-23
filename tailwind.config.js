@@ -33,11 +33,19 @@ export default {
           DEFAULT: '#9C9C9C',
           muted: '#636775',
           dark: '#2A2C35',
+        },
+        brass: {
+          aged: '#C5A059',
+          bright: '#E2BF7D',
+          dark: '#7E6538',
+          faint: 'rgba(197, 160, 89, 0.2)',
         }
       },
       fontFamily: {
         monumental: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
         parkinson: ['"Parkinson-Condensed"', '"Parkinson"', 'serif'],
+        deco: ['"Cinzel Decorative"', 'serif'],
+        marcellus: ['"Marcellus"', 'serif'],
         display: ['"Clash Grotesk"', 'sans-serif'],
         serif: ['"Bodoni Moda"', 'serif'],
         sans: ['"Clash Grotesk"', 'system-ui', 'sans-serif'],

@@ -75,7 +75,7 @@ export default function Ventures() {
   return (
     <section id="work" className="relative py-20 px-6 bg-obsidian-dark border-t border-white/[0.04]">
       <div className="max-w-6xl mx-auto space-y-20">
-        
+
         {/* Act II Title Block */}
         <div data-reveal className="text-center space-y-4">
           <h2 className="font-monumental text-5xl sm:text-7xl md:text-8xl font-normal text-white tracking-tight uppercase">
@@ -90,8 +90,8 @@ export default function Ventures() {
         <div className="space-y-16">
           {productions.map((item, idx) => (
             <React.Fragment key={item.id}>
-              <article 
-                data-reveal 
+              <article
+                data-reveal
                 className="p-8 sm:p-12 rounded-2xl bg-obsidian-surface border border-white/[0.06] hover:border-white/[0.12] transition-colors space-y-8"
               >
                 {/* Header Row */}
@@ -159,8 +159,8 @@ export default function Ventures() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                     {item.specs.map((spec) => (
-                      <div 
-                        key={spec.label} 
+                      <div
+                        key={spec.label}
                         className="flex items-baseline justify-between gap-4 py-1.5 border-b border-white/[0.02] text-xs sm:text-sm font-sans"
                       >
                         <span className="font-mono text-xs text-mineral shrink-0">
